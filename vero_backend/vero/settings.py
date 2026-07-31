@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     "corsheaders",
     "accounts",
     "onboarding",
+    "exercises",
+    "plans",
+    "logs",
 ]
 
 MIDDLEWARE = [
