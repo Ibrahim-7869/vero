@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "exercises",
     "plans",
     "logs",
+    "chat",
 ]
 
 MIDDLEWARE = [
