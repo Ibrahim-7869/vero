@@ -6,6 +6,7 @@ from onboarding.models import OnboardingProfile
 from exercises.models import Exercise
 from .models import WorkoutPlan, WorkoutDay, WorkoutExercise
 from .safety import get_safety_exclusions
+from .progression import analyze_user_progression
 
 
 EQUIPMENT_MAP = {
@@ -118,9 +119,22 @@ def _select_exercises_for_day(body_parts, user_equipment, safety_exclusions, use
 
     return selected
 
+def _adjust_prescription(base_prescription, modifier):
+    sets = base_prescription["sets"] + modifier
+    sets = max(2, min(sets, 5))
+
+    rest = base_prescription["rest_seconds"] - (modifier*10)
+    rest = max(15, min(rest, 120))
+
+    return {
+        "sets": sets,
+        "reps": base_prescription["reps"],
+        "rest_seconds": rest,
+    }
+
 
 @transaction.atomic
-def generate_workout_plan(user, reason="initial"):
+def generate_workout_plan(user, reason="initial", intensity_modifier=0, extra_exclusions=None, adjustment_note=None):
 
     try:
         profile = user.onboarding_profile
@@ -128,14 +142,17 @@ def generate_workout_plan(user, reason="initial"):
         raise ValueError("User has not completed onboarding yet.")
 
     safety_exclusions = get_safety_exclusions(profile)
+    if extra_exclusions:
+        safety_exclusions = list(set(safety_exclusions) | set(extra_exclusions))
 
     user_equipment = _get_user_equipment_values(profile)
     template = SCHEDULE_TEMPLATES.get(profile.days_per_week, SCHEDULE_TEMPLATES[3])
-    prescription = GOAL_PRESCRIPTION.get(profile.primary_goal, GOAL_PRESCRIPTION["general_fitness"])
+    base_prescription = GOAL_PRESCRIPTION.get(profile.primary_goal, GOAL_PRESCRIPTION["general_fitness"])
+    prescription = _adjust_prescription(base_prescription, intensity_modifier)
 
     WorkoutPlan.objects.filter(user=user, is_active=True).update(is_active=False)
 
-    plan = WorkoutPlan.objects.create(user=user, is_active=True, generated_reason=reason)
+    plan = WorkoutPlan.objects.create(user=user, is_active=True, generated_reason=reason, adjustment_note=adjustment_note)
 
     used_exercise_ids = set()
 
@@ -167,3 +184,32 @@ def generate_workout_plan(user, reason="initial"):
             )
 
     return plan
+
+def regenerate_plan_with_progression(user):
+
+    analysis = analyze_user_progression(user)
+    action = analysis["action"]
+
+    if action == "none":
+        return generate_workout_plan(user, reason="initial")
+
+    if action == "reduce_and_exclude":
+        return generate_workout_plan(
+            user, reason="ai_adjustment", intensity_modifier=-1,
+            extra_exclusions=analysis.get("extra_exclusions", []),
+            adjustment_note=analysis["reason"],
+        )
+
+    if action == "reduce_intensity":
+        return generate_workout_plan(
+            user, reason="ai_adjustment", intensity_modifier=-1, adjustment_note=analysis["reason"],
+        )
+
+    if action == "increase_intensity":
+        return generate_workout_plan(
+            user, reason="ai_adjustment", intensity_modifier=1, adjustment_note=analysis["reason"],
+        )
+
+    return generate_workout_plan(
+        user, reason="ai_adjustment", intensity_modifier=0, adjustment_note=analysis["reason"],
+    )

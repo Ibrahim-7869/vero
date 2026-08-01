@@ -12,6 +12,7 @@ class WorkoutPlan(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="workout_plans")
     is_active = models.BooleanField(default=True)
     generated_reason = models.CharField(max_length=20, choices=GeneratedReason.choices, default=GeneratedReason.INITIAL)
+    adjustment_note = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

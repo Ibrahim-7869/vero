@@ -16,7 +16,7 @@ class WorkoutSession(models.Model):
         TOO_HARD = "too_hard", "Too hard"
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="workout_sessions" )
-    workout_days = models.ForeignKey(WorkoutDay, on_delete=models.PROTECT, related_name="sessions")
+    workout_day = models.ForeignKey(WorkoutDay, on_delete=models.PROTECT, related_name="sessions")
     date = models.DateField()
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.IN_PROGRESS)
     feedback = models.CharField(max_length=20, choices=Feedback.choices, null=True, blank=True)
@@ -42,4 +42,4 @@ class ExerciseLog(models.Model):
     pain_details = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.workout_exercise.exercises.name} log"
+        return f"{self.workout_exercise.exercise.name} log"
