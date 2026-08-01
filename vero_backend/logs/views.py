@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from plans.models import WorkoutDay, WorkoutExercise
 from .models import WorkoutSession, ExerciseLog
 from .serializers import WorkoutSessionSerializer, ExerciseLogSerializer
+from .stats import get_user_stats
 
 # Create your views here.
 
@@ -79,3 +80,10 @@ class SessionHistoryView(APIView):
     def get(self, request):
         sessions = WorkoutSession.objects.filter(user=request.user).order_by("-date")
         return Response(WorkoutSessionSerializer(sessions, many=True).data)
+
+class UserStatsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response(get_user_stats(request.user))
+    
