@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+
+@tailwind utilities;
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowzoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* fill-mode: both = invisible during delay, visible after animation */
+.animate-fadeup {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out both;
+}
+.animate-fadeup-1 {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out 0.1s both;
+}
+.animate-fadeup-2 {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out 0.2s both;
+}
+.animate-fadeup-3 {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out 0.3s both;
+}
+.animate-fadeup-4 {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out 0.4s both;
+}
+.animate-fadeup-5 {
+  opacity: 0;
+  animation: fadeup 0.8s ease-out 0.5s both;
+}
+.animate-slowzoom {
+  animation: slowzoom 20s ease-out both;
+}
+
+@theme {
+  --color-background: #121316;
+  --color-surface: #1c1d21;
+  --color-surface-dim: #121316;
+  --color-border: #2a2c31;
+  --color-text-primary: #f2f2f0;
+  --color-text-secondary: #8a8d94;
+  --color-text-disabled: #6a6d74;
+  --color-primary-container: #5dcaa5;
+  --color-text-on-primary: #04342c;
+  --color-primary: #7ae6c0;
+}

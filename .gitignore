@@ -1,0 +1,51 @@
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build / generated assets
+/dist/
+/build/
+**/dist/
+**/build/
+coverage/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+**/.venv/
+**/venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Environment / local secrets
+.env
+.env.*
+!.env.example
+
+# Databases
+*.sqlite3
+*.db
+
+# Upload / media (if you use local storage)
+media/
+staticfiles/
+uploads/
+
+# Logs
+*.log

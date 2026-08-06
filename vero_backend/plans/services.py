@@ -81,7 +81,7 @@ def _get_user_equipment_values(profile):
     return values
 
 
-def _select_exercises_for_day(body_parts, user_equipment, safety_exclusions, used_exercise_ids, target_total=5):
+def _select_exercises_for_day(body_parts, user_equipment, all_exclusions, used_exercise_ids, target_total=5):
     selected = []
     num_parts = len(body_parts)
     base_count = target_total // num_parts
@@ -101,12 +101,12 @@ def _select_exercises_for_day(body_parts, user_equipment, safety_exclusions, use
             if set(ex.equipments).issubset(user_equipment)
         ]
 
-        if safety_exclusions:
+        if all_exclusions:
             valid_candidates = [
                 ex for ex in valid_candidates
                 if not any(
                     excl.lower() in " ".join(ex.target_muscles + ex.secondary_muscles + ex.body_parts).lower()
-                    for excl in safety_exclusions
+                    for excl in all_exclusions
                 )
             ]
 
@@ -141,9 +141,18 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0, extra_ex
     except OnboardingProfile.DoesNotExist:
         raise ValueError("User has not completed onboarding yet.")
 
+    # 1. Fetch safety exclusions (from onboarding injury details)
     safety_exclusions = get_safety_exclusions(profile)
+    
+    # 2. Add any dynamic extra exclusions (from progression analysis)
     if extra_exclusions:
-        safety_exclusions = list(set(safety_exclusions) | set(extra_exclusions))
+        safety_exclusions.extend(extra_exclusions)
+        
+    # 3. Add AI-requested exclusions (from chat, e.g. "I hate lunges")
+    ai_exclusions = getattr(profile, "ai_exclusions", [])
+    
+    # 4. Combine them all into one unique list
+    all_exclusions = list(set(safety_exclusions + ai_exclusions))
 
     user_equipment = _get_user_equipment_values(profile)
     template = SCHEDULE_TEMPLATES.get(profile.days_per_week, SCHEDULE_TEMPLATES[3])
@@ -170,7 +179,7 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0, extra_ex
             continue
 
         exercises = _select_exercises_for_day(
-            body_parts, user_equipment, safety_exclusions, used_exercise_ids, target_total=5
+            body_parts, user_equipment, all_exclusions, used_exercise_ids, target_total=5
         )
 
         for order, exercise in enumerate(exercises, start=1):
@@ -185,7 +194,7 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0, extra_ex
 
     return plan
 
-def regenerate_plan_with_progression(user):
+def regenerate_plan_with_progression(user, reason="ai_adjustment"):
 
     analysis = analyze_user_progression(user)
     action = analysis["action"]
@@ -195,21 +204,87 @@ def regenerate_plan_with_progression(user):
 
     if action == "reduce_and_exclude":
         return generate_workout_plan(
-            user, reason="ai_adjustment", intensity_modifier=-1,
+            user, reason=reason, intensity_modifier=-1,
             extra_exclusions=analysis.get("extra_exclusions", []),
             adjustment_note=analysis["reason"],
         )
 
     if action == "reduce_intensity":
         return generate_workout_plan(
-            user, reason="ai_adjustment", intensity_modifier=-1, adjustment_note=analysis["reason"],
+            user, reason=reason, intensity_modifier=-1, adjustment_note=analysis["reason"],
         )
 
     if action == "increase_intensity":
         return generate_workout_plan(
-            user, reason="ai_adjustment", intensity_modifier=1, adjustment_note=analysis["reason"],
+            user, reason=reason, intensity_modifier=1, adjustment_note=analysis["reason"],
         )
 
     return generate_workout_plan(
-        user, reason="ai_adjustment", intensity_modifier=0, adjustment_note=analysis["reason"],
+        user, reason=reason, intensity_modifier=0, adjustment_note=analysis["reason"],
     )
+    
+def replace_exercise_in_active_plan(user, keyword):
+    plan = WorkoutPlan.objects.filter(user=user, is_active=True).first()
+    if not plan:
+        return 0
+
+    try:
+        profile = user.onboarding_profile
+        user_equipment = _get_user_equipment_values(profile)
+        safety_exclusions = get_safety_exclusions(profile)
+        ai_exclusions = getattr(profile, "ai_exclusions", [])
+        all_exclusions = list(set(safety_exclusions + ai_exclusions))
+    except Exception:
+        user_equipment = set()
+        all_exclusions = []
+
+    # Find all instances of the exercise in the plan that match the keyword
+    workout_exercises = WorkoutExercise.objects.filter(
+        workout_day__plan=plan, 
+        exercise__name__icontains=keyword
+    )
+
+    replaced_count = 0
+    # Get all exercise IDs currently in the plan so we don't duplicate them
+    current_exercise_ids = set(WorkoutExercise.objects.filter(workout_day__plan=plan).values_list('exercise_id', flat=True))
+
+    for we in workout_exercises:
+        original_ex = we.exercise
+        
+        # Find candidates that match the SAME body parts
+        if not original_ex.body_parts:
+            continue # Can't match a replacement if we don't know the body part
+            
+        candidates = Exercise.objects.filter(
+            is_home_friendly=True,
+            is_active=True,
+            body_parts__overlap=original_ex.body_parts, # Postgres array overlap
+        ).exclude(id__in=current_exercise_ids).exclude(id=original_ex.id)
+
+        # Filter by equipment
+        valid_candidates = [
+            ex for ex in candidates
+            if set(ex.equipments).issubset(user_equipment)
+        ]
+
+        # Filter out safety/AI exclusions
+        if all_exclusions:
+            valid_candidates = [
+                ex for ex in valid_candidates
+                if not any(
+                    excl.lower() in " ".join(ex.target_muscles + ex.secondary_muscles + ex.body_parts).lower()
+                    for excl in all_exclusions
+                )
+            ]
+
+        if valid_candidates:
+            # Pick a random valid replacement
+            new_ex = random.choice(valid_candidates)
+            we.exercise = new_ex
+            we.save() # Save the swap (keeps the same sets, reps, order, and day!)
+            
+            # Add the new exercise to our list so we don't pick it again for another swap
+            current_exercise_ids.add(new_ex.id)
+            replaced_count += 1
+
+    return replaced_count

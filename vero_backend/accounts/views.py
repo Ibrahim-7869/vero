@@ -5,7 +5,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .serializers import SignupSerializer, UserSerializer 
+from .serializers import SignupSerializer, UserSerializer, ChangePasswordSerializer
 from .utils import send_verification_email
 
 User = get_user_model()
@@ -70,3 +70,21 @@ class MeView(APIView):
 
     def get(self,request):
         return Response(UserSerializer(request.user).data)
+    
+class ChangePasswordView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        serializer = ChangePasswordSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        user = request.user
+        if not user.check_password(serializer.validated_data["current_password"]):
+            return Response(
+                {"error": "Current password is incorrect."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+            
+        user.set_password(serializer.validated_data["new_password"])
+        user.save()
+        return Response({"message": "Password updated successfully."})

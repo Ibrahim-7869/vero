@@ -23,3 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ["id", "username", "first_name", "email", "email_verified", "created_at"]
         read_only_fields = fields
         
+class ChangePasswordSerializer(serializers.Serializer):
+    current_password = serializers.CharField(write_only=True)
+    new_password = serializers.CharField(write_only=True, min_length=8)
+        

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import StartSessionView, LogExerciseView, CompleteSessionView, SessionHistoryView, UserStatsView
+from .views import StartSessionView, LogExerciseView, CompleteSessionView, SessionHistoryView, UserStatsView, SessionDetailView
 
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path("sessions/<int:session_id>/complete/", CompleteSessionView.as_view(), name="complete-session"),
     path("sessions/history/", SessionHistoryView.as_view(), name="session-history"),
     path("stats/", UserStatsView.as_view(), name="user-stats"),
+    path("sessions/<int:session_id>/", SessionDetailView.as_view(), name="session-detail"),
 ]

@@ -21,8 +21,10 @@ class SendChatMessageView(APIView):
 
     def post(self, request):
         message = request.data.get("message")
+        today_date = request.data.get("today_date")
+        
         if not message:
             return Response({"error": "Message is required."}, status=status.HTTP_400_BAD_REQUEST)
 
-        reply = get_chat_response(request.user, message)
+        reply = get_chat_response(request.user, message, today_date=today_date)
         return Response({"reply": reply}, status=status.HTTP_201_CREATED)

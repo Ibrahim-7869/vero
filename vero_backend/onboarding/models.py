@@ -98,7 +98,8 @@ class OnboardingProfile(models.Model):
         CONVENIENCE = "convenience_food", "Mostly convenience food"
 
     eating_habits = models.CharField(max_length=20, choices=EatingHabits.choices)
-
+    
+    ai_exclusions = models.JSONField(default=list, blank=True)
     completed_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):

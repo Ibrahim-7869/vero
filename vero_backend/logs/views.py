@@ -83,7 +83,50 @@ class SessionHistoryView(APIView):
 
 class UserStatsView(APIView):
     permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        workout_day_id = request.data.get("workout_day")
+        try:
+            workout_day = WorkoutDay.objects.get(
+            id=workout_day_id, plan__user=request.user, plan__is_active=True
+        )
+        except WorkoutDay.DoesNotExist:
+            return Response(
+            {"error": "Invalid workout day for your active plan."},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
+        today = request.data.get("date")
+
+    # Prevent starting the same workout twice on the same day
+        already_exists = WorkoutSession.objects.filter(
+            user=request.user,
+            workout_day=workout_day,
+            date=today,
+        ).exclude(status=WorkoutSession.Status.SKIPPED).exists()
+
+        if already_exists:
+            return Response(
+                {"error": "You've already completed or started this workout today."},
+                status=status.HTTP_400_BAD_REQUEST,
+        )
+
+        session = WorkoutSession.objects.create(
+            user=request.user,
+            workout_day=workout_day,
+            date=today,
+            status=WorkoutSession.Status.IN_PROGRESS,
+        )
+        return Response(WorkoutSessionSerializer(session).data, status=status.HTTP_201_CREATED)
     def get(self, request):
         return Response(get_user_stats(request.user))
-    
+
+class SessionDetailView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, session_id):
+        try:
+            session = WorkoutSession.objects.get(id=session_id, user=request.user)
+        except WorkoutSession.DoesNotExist:
+            return Response({"error": "Session not found."}, status=status.HTTP_404_NOT_FOUND)
+        return Response(WorkoutSessionSerializer(session).data)

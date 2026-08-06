@@ -18,9 +18,10 @@ class OnboardingProfileView(APIView):
             profile = request.user.onboarding_profile
         except OnboardingProfile.DoesNotExist:
             return Response(
-                {"error": "Onbaording Profile not started yet."},
-                status=status.HHTP_404_NOT_FOUND,
-            )
+            {"error": "Onboarding profile not started yet."},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+        return Response(OnboardingProfileSerializer(profile).data)
     
     def post(self,request):
         if hasattr(request.user, "onboarding_profile"):
