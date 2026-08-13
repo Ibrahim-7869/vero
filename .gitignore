@@ -1,51 +1,53 @@
-# Editor / OS
-.vscode/
-.idea/
+# ── OS / editor ──────────────────────────────
 .DS_Store
 *.swp
 *.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.idea/
+.vscode/
 
-# Dependencies
+# ── Node / frontend ──────────────────────────
 node_modules/
-**/node_modules/
-
-# Build / generated assets
-/dist/
-/build/
-**/dist/
-**/build/
+dist/
+dist-ssr/
 coverage/
+*.local
 *.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Python
+# ── Python / backend ─────────────────────────
 __pycache__/
-**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-.venv/
 venv/
-**/.venv/
-**/venv/
+.venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .coverage
 coverage.xml
 
-# Environment / local secrets
+# ── Secrets ──────────────────────────────────
 .env
 .env.*
 !.env.example
 
-# Databases
+# ── Databases ────────────────────────────────
 *.sqlite3
 *.db
 
-# Upload / media (if you use local storage)
-media/
+# ── Django artifacts ─────────────────────────
 staticfiles/
+media/
 uploads/
 
-# Logs
+# ── Log FILES only (NOT the Django "logs" app!) ──
 *.log
