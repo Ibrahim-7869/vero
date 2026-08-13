@@ -6,12 +6,11 @@ from .models import OnboardingProfile
 @admin.register(OnboardingProfile)
 class OnboardingProfileAdmin(admin.ModelAdmin):
     list_display = (
-            "user",
+        "user",
         "primary_goal",
-        "body_type",
         "days_per_week",
         "time_per_session",
         "completed_at",
     )
-    list_filter = ("primary_goal", "body_type", "training_style", "workout_focus")
+    list_filter = ("primary_goal", "training_style", "workout_focus")
     search_fields = ("user__username", "user__email")

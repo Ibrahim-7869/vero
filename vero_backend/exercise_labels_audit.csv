@@ -1,0 +1,1501 @@
+id,name,difficulty,movement_pattern,target_muscles
+1450,muscle up,5,pull_vertical,lats
+1451,chest stretch with exercise ball,1,isolation_upper,pectorals
+1452,sled calf press on leg press,1,isolation_lower,calves
+1453,lever standing calf raise,1,isolation_lower,calves
+1454,cable standing calf raise,2,isolation_lower,calves
+1455,assisted lying glutes stretch,1,hinge,glutes
+1457,dumbbell goblet squat,3,squat,quads
+1458,cable seated shoulder internal rotation,3,push_vertical,delts
+1460,barbell standing twist,3,core,abs
+1461,barbell reverse close-grip bench press,3,push_horizontal,triceps
+1462,full maltese,5,core,abs
+1463,barbell reverse grip skullcrusher,3,full_body,triceps
+1464,shoulder tap,2,core,abs
+1465,exercise ball seated hamstring stretch,1,hinge,hamstrings
+1466,dumbbell seated front raise,2,isolation_upper,delts
+1467,twisted leg raise (female),2,core,abs
+74,barbell seated close-grip concentration curl,2,isolation_upper,biceps
+76,cable high pulley overhead tricep extension,2,isolation_upper,triceps
+69,dumbbell decline hammer press,3,push_horizontal,pectorals
+70,dumbbell iron cross - improved variation,5,push_vertical,delts
+71,dumbbell one arm shoulder press v. 2,3,push_vertical,delts
+77,incline close-grip push-up,2,push_horizontal,triceps
+107,dumbbell front raise,2,isolation_upper,delts
+37,one leg floor calf raise,2,isolation_lower,calves
+67,cable incline pushdown,2,isolation_upper,lats
+29,upward facing dog,2,full_body,spine
+30,assisted hanging knee raise,2,core,abs
+31,impossible dips,2,full_body,triceps
+32,push-up inside leg kick,2,hinge,glutes
+33,cable cross-over variation,3,push_horizontal,pectorals
+34,barbell seated bradford rocky press,3,push_vertical,delts
+58,jack jump (male),2,plyometric,cardiovascular system
+59,barbell jump squat,3,plyometric,glutes
+60,janda sit-up,2,core,abs
+65,calf stretch with rope,1,full_body,calves
+61,push-up on lower arms - resistance variation,2,push_horizontal,triceps
+62,prone twist on stability ball,3,core,abs
+63,standing lateral stretch,1,pull_vertical,lats
+66,core barbell upright row v. 2,3,pull_horizontal,delts
+39,roller hip lat stretch,1,hinge,glutes
+35,band underhand pulldown with classic,3,pull_vertical,lats
+40,weighted sissy squat,3,squat,quads
+41,runners stretch,1,hinge,hamstrings
+46,resistance band seated hip abduction,3,core,abductors
+42,gentle style cable pulldown (pro lat bar),3,pull_vertical,lats
+43,inverse leg curl (on pull-up cable machine),2,hinge,hamstrings
+47,bear crawl,2,full_body,cardiovascular system
+49,isometric wipers,2,push_horizontal,pectorals
+50,raise single arm push-up,2,push_horizontal,pectorals
+51,weighted stretch lunge,1,lunge,glutes
+52,seated calf stretch (male),1,isolation_lower,calves
+53,lever lying leg curl,2,hinge,hamstrings
+54,hip raise (bent knee),2,core,abs
+55,smith bent knee good morning,4,hinge,glutes
+56,ez bar standing french press,3,full_body,triceps
+57,smith upright row,3,pull_horizontal,delts
+79,air bike,2,core,abs
+80,band kneeling twisting crunch,2,core,abs
+81,barbell curl,2,isolation_upper,biceps
+82,cable incline fly (on stability ball),2,isolation_upper,pectorals
+83,dumbbell seated palms up wrist curl,2,isolation_upper,forearms
+84,rocking frog stretch,1,hinge,glutes
+85,barbell one arm side deadlift,4,hinge,glutes
+86,3/4 sit-up,2,core,abs
+89,dumbbell kneeling bicep curl exercise ball,2,isolation_upper,biceps
+90,spine twist,2,core,abs
+91,ez barbell spider curl,2,isolation_upper,biceps
+92,lever one arm shoulder press,3,push_vertical,delts
+93,push-up (bosu ball),2,push_horizontal,pectorals
+94,exercise ball hip flexor stretch,1,hinge,glutes
+95,dumbbell bicep curl on exercise ball with leg raised,2,core,biceps
+106,dumbbell bench seated press,3,push_vertical,delts
+97,hack calf raise,2,isolation_lower,calves
+98,cable decline press,3,push_horizontal,pectorals
+99,sled 45° leg press (side pov),3,squat,glutes
+100,barbell standing back wrist curl,2,isolation_upper,forearms
+101,assisted prone rectus femoris stretch,1,core,abs
+102,dumbbell one arm standing hammer curl,2,isolation_upper,biceps
+103,advanced dumbbell stiff leg deadlift,4,hinge,glutes
+104,wrist circles,2,full_body,forearms
+105,barbell front raise and pullover,2,isolation_upper,pectorals
+109,band alternating biceps curl,2,isolation_upper,biceps
+110,band alternating v-up with simple,3,core,abs
+112,dumbbell standing biceps curl,2,isolation_upper,biceps
+113,dumbbell standing bent over two arm triceps extension,2,isolation_upper,triceps
+114,dumbbell over bench revers wrist curl,2,isolation_upper,forearms
+115,barbell incline bench press,3,push_horizontal,pectorals
+116,dynamic chest stretch (male),1,push_horizontal,pectorals
+126,superman push-up,2,push_horizontal,pectorals
+118,bodyweight squatting row,2,squat,upper back
+119,cable pushdown,2,isolation_upper,triceps
+120,cable lateral pulldown with v-bar,3,pull_vertical,lats
+121,barbell seated close grip behind neck triceps extension,2,isolation_upper,triceps
+122,narrow push-up on exercise ball,2,push_horizontal,triceps
+123,dumbbell one arm hammer preacher curl,2,isolation_upper,biceps
+125,cable standing row (v-bar),3,pull_horizontal,upper back
+156,dumbbell scott press,3,push_vertical,delts
+128,cable rope one arm hammer preacher curl,2,isolation_upper,biceps
+129,dumbbell seated bent over triceps extension,2,isolation_upper,triceps
+130,alternate lateral pulldown,3,pull_vertical,lats
+131,dumbbell over bench one arm reverse wrist curl,2,isolation_upper,forearms
+132,push-up on lower arms,2,push_horizontal,triceps
+133,kettlebell bottoms up clean from the hang position,3,full_body,biceps
+134,barbell skier,3,push_vertical,delts
+135,barbell reverse preacher curl,2,isolation_upper,biceps
+137,hanging straight leg raise,2,core,abs
+138,suspended row,2,pull_horizontal,upper back
+139,gentle prone twist on stability ball,3,core,abs
+140,lever pullover,3,pull_vertical,lats
+141,resistance band seated chest press,3,push_horizontal,pectorals
+142,biceps narrow pull-ups,4,pull_vertical,biceps
+143,dumbbell lying rear lateral raise,2,isolation_upper,delts
+144,narrow style band jack knife sit-up,2,core,abs
+145,kettlebell pistol squat,5,squat,glutes
+147,dumbbell stiff leg deadlift,4,hinge,glutes
+148,dumbbell seated reverse grip one arm overhead tricep extension,2,isolation_upper,triceps
+150,kettlebell alternating press,3,push_vertical,delts
+151,smith bent over row with declined,3,pull_horizontal,upper back
+152,ski step,2,full_body,cardiovascular system
+153,barbell seated overhead triceps extension,2,isolation_upper,triceps
+154,smith incline bench press,3,push_horizontal,pectorals
+155,barbell hack squat,3,squat,glutes
+158,weighted lunge with swing,3,lunge,glutes
+159,cable lying close-grip curl,2,isolation_upper,biceps
+160,barbell rear lunge v. 2,3,lunge,glutes
+161,barbell incline reverse-grip press,3,full_body,triceps
+162,lever shoulder press,3,push_vertical,delts
+163,weighted side bend (on stability ball),3,core,abs
+164,dumbbell one arm upright row,3,pull_horizontal,delts
+165,ez bar lying close grip triceps extension behind head,2,isolation_upper,triceps
+168,semi squat jump (male),2,plyometric,cardiovascular system
+169,barbell standing rocking leg calf raise,2,isolation_lower,calves
+170,standing calf raise (on a staircase),2,isolation_lower,calves
+171,barbell wrist curl v. 2,2,isolation_upper,forearms
+173,dumbbell lying single extension,2,isolation_upper,triceps
+175,dumbbell reverse spider curl,2,isolation_upper,biceps
+176,bent knee lying twist (male),2,hinge,glutes
+178,ez barbell curl,2,isolation_upper,biceps
+179,hanging straight leg raise with elevated,2,core,abs
+180,rounded twisted leg raise (female),2,core,abs
+181,quads,2,squat,quads
+182,sit-up with arms on chest,2,core,abs
+183,archer pull up,4,pull_vertical,lats
+184,potty squat,2,squat,abs
+222,dumbbell one arm shoulder press,3,push_vertical,delts
+187,smith incline reverse-grip press,3,push_horizontal,pectorals
+188,dumbbell hammer curl with traditional,2,isolation_upper,biceps
+189,dumbbell over bench one arm wrist curl - strength variation,2,isolation_upper,forearms
+190,medicine ball chest push multiple response,3,push_horizontal,pectorals
+191,triceps dips floor,2,full_body,triceps
+192,lever calf press,3,full_body,calves
+193,kettlebell two arm clean,3,full_body,delts
+194,dumbbell seated preacher curl,2,isolation_upper,biceps
+196,exercise ball seated triceps stretch,1,full_body,triceps
+198,dumbbell seated one arm rotate,3,full_body,forearms
+199,dumbbell lying hammer press,3,push_horizontal,pectorals
+200,assisted standing triceps extension (with towel),2,isolation_upper,triceps
+201,dumbbell clean,3,hinge,glutes
+202,cocoons with mega,2,core,abs
+203,lever seated row,3,pull_horizontal,upper back
+232,rough band hip lift,3,hinge,glutes
+205,dumbbell close grip press,3,full_body,triceps
+206,barbell rollerout,3,core,abs
+207,assisted standing chin-up,4,pull_vertical,lats
+208,assisted standing triceps extension (with towel) with horizontal,2,isolation_upper,triceps
+209,dumbbell lying pronation on floor,3,full_body,forearms
+210,cable decline fly,2,isolation_upper,pectorals
+211,weighted kneeling step with swing,3,push_vertical,delts
+212,dumbbell incline row,3,pull_horizontal,upper back
+214,side hip abduction,2,core,abductors
+215,smith machine incline tricep extension - straight variation,2,isolation_upper,triceps
+216,scapula dips,2,full_body,traps
+217,cable bench press,3,push_horizontal,pectorals
+218,lever reverse grip preacher curl with precision,2,isolation_upper,biceps
+219,smith leg press,3,squat,glutes
+220,barbell wrist curl,2,isolation_upper,forearms
+221,barbell upright row v. 2,3,pull_horizontal,delts
+224,kettlebell seated press with high,3,push_vertical,delts
+225,kettlebell sumo high pull,3,full_body,traps
+226,roller seated shoulder flexor depresor retractor,3,push_horizontal,pectorals
+227,barbell reverse grip incline bench row,3,pull_horizontal,upper back
+228,dumbbell rear fly,2,isolation_upper,delts
+229,dumbbell palms in incline bench press,3,push_horizontal,triceps
+230,dumbbell standing one arm concentration curl,2,isolation_upper,biceps
+231,single style cable standing crunch (with rope attachment),2,core,abs
+234,medicine ball close grip push up,2,push_horizontal,triceps
+235,cable seated curl,2,isolation_upper,biceps
+236,barbell standing calf raise,2,isolation_lower,calves
+237,weighted hyperextension (on stability ball),2,hinge,spine
+238,cable seated crunch,2,core,abs
+239,cable concentration curl tempo,2,isolation_upper,biceps
+240,smith shoulder press,3,push_vertical,delts
+241,barbell wide reverse grip bench press,3,push_horizontal,pectorals
+242,hamstring stretch,1,hinge,hamstrings
+244,bridge - mountain climber (cross body),2,core,abs
+245,split squats,2,lunge,quads
+246,pointed cable palm rotational row,3,pull_horizontal,upper back
+247,band seated hip internal rotation,3,hinge,glutes
+248,smith one leg floor calf raise,2,isolation_lower,calves
+249,lying leg-hip raise,2,core,abs
+250,band single leg calf raise,2,isolation_lower,calves
+251,lever horizontal one leg press,3,squat,glutes
+253,band horizontal pallof press,3,core,abs
+254,dumbbell reverse grip incline bench two arm row,3,pull_horizontal,upper back
+255,bench dip on floor,2,full_body,triceps
+256,barbell decline pullover,3,push_horizontal,pectorals
+257,kettlebell windmill,3,core,abs
+258,flexible cable triceps pushdown (v-bar),2,isolation_upper,triceps
+259,weighted lunge with swing twisted,3,lunge,glutes
+260,chest dip,2,push_horizontal,pectorals
+263,triceps dip (between benches) - extreme variation,2,full_body,triceps
+264,incline twisting sit-up,2,core,abs
+265,one leg donkey calf raise,2,isolation_lower,calves
+266,cable seated row with reverse,3,pull_horizontal,upper back
+267,kettlebell double alternating hang clean,3,full_body,biceps
+268,dumbbell standing overhead press,4,push_vertical,delts
+269,stationary bike walk,3,full_body,cardiovascular system
+531,dumbbell pullover on exercise ball,3,push_horizontal,pectorals
+271,smith reverse grip bent over row,3,pull_horizontal,upper back
+272,lever t bar row,3,pull_horizontal,upper back
+273,medicine ball chest pass,3,push_horizontal,pectorals
+274,barbell standing reverse grip curl resistance,2,isolation_upper,biceps
+275,dumbbell incline curl,2,isolation_upper,biceps
+276,barbell biceps curl (with arm blaster),2,isolation_upper,biceps
+277,muscle-up (on vertical bar),5,pull_vertical,lats
+278,upright smith incline bench press,3,push_horizontal,pectorals
+281,isolation assisted seated pectoralis major stretch with stability ball,1,push_horizontal,pectorals
+282,medicine ball supine chest throw,3,pull_horizontal,triceps
+283,dumbbell one arm fly on exercise ball,2,isolation_upper,pectorals
+284,lower back curl,2,isolation_upper,spine
+285,dumbbell full can lateral raise,2,isolation_upper,delts
+286,lying elbow to knee,2,core,abs
+287,cable cross-over revers fly,2,isolation_upper,delts
+325,dumbbell standing one arm curl (over incline bench),2,isolation_upper,biceps
+289,band one arm single leg split squat,3,lunge,quads
+291,dumbbell incline one arm lateral raise,2,isolation_upper,delts
+292,assisted sit-up,2,core,abs
+293,cable twist,3,core,abs
+295,glute bridge two legs on bench (male),2,hinge,glutes
+296,finger curls,2,isolation_upper,forearms
+1298,deep push up,2,push_horizontal,pectorals
+299,hack one leg calf raise,2,isolation_lower,calves
+301,smith incline shoulder raises,2,full_body,serratus anterior
+302,incline push-up,2,push_horizontal,pectorals
+303,barbell front raise,2,isolation_upper,delts
+304,dumbbell incline breeding,3,push_horizontal,pectorals
+305,weighted seated bicep curl (on stability ball),2,isolation_upper,biceps
+364,roller side lat stretch,1,pull_vertical,lats
+307,hands clasped circular toe touch (male),2,core,glutes
+308,potty squat with support,2,squat,glutes
+309,smith seated wrist curl,2,isolation_upper,forearms
+310,lever preacher curl,2,isolation_upper,biceps
+311,kettlebell alternating renegade row,3,pull_horizontal,upper back
+312,hanging oblique knee raise,2,core,abs
+313,basic toe touch (male),2,core,glutes
+314,dumbbell standing alternate overhead press,4,push_vertical,delts
+315,band lying straight leg raise,2,core,abs
+317,barbell sitted alternate leg raise (female),2,core,abs
+318,dumbbell standing one arm extension,2,isolation_upper,triceps
+319,wrist rollerer,3,full_body,forearms
+320,frankenstein squat,3,squat,glutes
+321,side-to-side chin with reverse,2,pull_vertical,lats
+322,dumbbell incline press on exercise ball,3,push_horizontal,pectorals
+324,lever reverse t-bar row,3,pull_horizontal,upper back
+365,cable rear drive,3,full_body,triceps
+327,weighted standing hand squeeze,3,full_body,forearms
+328,bodyweight standing calf raise,2,isolation_lower,calves
+329,dumbbell over bench neutral wrist curl,2,isolation_upper,biceps
+330,one arm towel row,2,pull_horizontal,upper back
+331,kettlebell seated press,3,push_vertical,delts
+332,straddle planche,5,core,abs
+333,kettlebell two arm military press,3,push_vertical,delts
+334,dumbbell reverse wrist curl,2,isolation_upper,forearms
+335,london bridge,3,pull_horizontal,upper back
+337,tuck crunch,2,core,abs
+338,dumbbell sumo pull through,3,hinge,glutes
+339,gorilla chin,2,core,abs
+340,sit-up v. 2,2,core,abs
+341,barbell pin presses,3,full_body,triceps
+342,lever seated calf raise,2,isolation_lower,calves
+343,dumbbell pronate-grip triceps extension,2,isolation_upper,triceps
+344,dumbbell one arm chest fly on exercise ball,2,isolation_upper,pectorals
+346,dumbbell one arm pullover on exercise ball,3,push_horizontal,pectorals
+347,dumbbell one arm kickback,2,isolation_upper,triceps
+348,bodyweight squatting row (with towel),2,squat,upper back
+349,lever seated dip,3,full_body,triceps
+350,dumbbell decline shrug v. 2,3,isolation_upper,traps
+351,barbell low bar squat,3,squat,glutes
+352,dumbbell alternate biceps curl,2,isolation_upper,biceps
+353,butterfly yoga pose,2,isolation_upper,adductors
+354,lying (side) quads stretch,1,squat,quads
+356,dumbbell one arm reverse preacher curl,2,isolation_upper,biceps
+357,dumbbell incline hammer curl,2,isolation_upper,biceps
+358,inverted row,2,pull_horizontal,upper back
+359,weighted tricep dips,3,full_body,triceps
+360,twisted leg raise,2,core,abs
+361,dumbbell one arm bent-over row,3,pull_horizontal,upper back
+362,band one arm twisting chest press,3,push_horizontal,pectorals
+363,one leg squat,2,squat,glutes
+367,targeted style smith close-grip bench press,3,push_horizontal,triceps
+368,side lying hip adduction (male),2,isolation_lower,adductors
+369,cable rope elevated seated row,3,pull_horizontal,upper back
+370,lever donkey calf raise,2,isolation_lower,calves
+371,dumbbell raise,2,push_vertical,delts
+372,kettlebell alternating row,3,pull_horizontal,upper back
+373,barbell bent arm pullover,3,pull_vertical,lats
+374,dumbbell iron cross,5,push_vertical,delts
+375,cable upright row,3,pull_horizontal,delts
+377,incline push up depth jump,2,plyometric,pectorals
+378,rear pull-up,4,pull_vertical,lats
+379,lever gripless shrug v. 2,3,isolation_upper,traps
+380,short stride run,2,full_body,cardiovascular system
+382,ez bar french press on exercise ball,3,full_body,triceps
+383,lever military press,3,push_vertical,delts
+384,back pec stretch,1,pull_vertical,lats
+385,lever seated hip abduction,3,core,abductors
+387,roller seated single leg shoulder flexor depresor retractor,3,push_horizontal,pectorals
+388,oblique crunch v. 2,2,core,abs
+389,dumbbell standing bent over one arm triceps extension,2,isolation_upper,triceps
+390,clock push-up,2,push_horizontal,pectorals
+391,cable wide grip rear pulldown behind neck,3,pull_vertical,lats
+392,front plank with twist,2,core,abs
+393,rocky pull-up pulldown,4,pull_vertical,lats
+394,ez barbell decline triceps extension,2,isolation_upper,triceps
+397,one leg squat - expanded variation,2,squat,glutes
+398,standing pelvic tilt,2,full_body,spine
+399,cable kneeling crunch - gentle variation,2,core,abs
+400,cable standing pulldown (with rope),3,full_body,biceps
+401,dumbbell prone incline hammer curl,2,isolation_upper,biceps
+402,dumbbell decline shrug,3,isolation_upper,traps
+403,l-pull-up,4,pull_vertical,lats
+404,dumbbell over bench wrist curl,2,isolation_upper,forearms
+405,band step-up,2,lunge,glutes
+407,exercise ball hug,3,full_body,spine
+408,barbell seated good morning,4,hinge,glutes
+409,pelvic tilt into bridge,2,hinge,glutes
+410,cable russian twists (on stability ball),3,core,abs
+411,ez-bar close-grip bench press,3,push_horizontal,triceps
+412,dumbbell single leg deadlift with stepbox support,4,hinge,glutes
+413,cable incline bench row - elite variation,3,pull_horizontal,upper back
+414,cable one arm lateral bent-over,3,push_horizontal,pectorals
+416,cable concentration extension (on knee),2,isolation_upper,triceps
+417,medicine ball chest push from 3 point stance,3,push_horizontal,pectorals
+418,barbell standing bradford press,3,push_vertical,delts
+419,seated glute stretch,1,hinge,glutes
+420,posterior tibialis stretch,1,full_body,calves
+421,world greatest stretch,1,hinge,hamstrings
+422,barbell seated twist,3,core,abs
+424,barbell shrug,3,isolation_upper,traps
+426,barbell full squat (back pov),3,squat,glutes
+427,targeted style single leg calf raise (on a dumbbell),2,isolation_lower,calves
+428,sphinx,2,full_body,spine
+429,burpee,2,plyometric,cardiovascular system
+430,band one arm twisting seated row,3,pull_horizontal,upper back
+431,barbell incline row,3,pull_horizontal,upper back
+432,lever shoulder press v. 3,3,push_vertical,delts
+433,sissy squat isolation,2,squat,quads
+435,barbell reverse grip decline bench press,4,push_horizontal,pectorals
+436,dumbbell standing calf raise,2,isolation_lower,calves
+437,band close-grip pulldown,3,pull_vertical,lats
+438,cable seated overhead curl,2,isolation_upper,biceps
+439,three bench dip,2,full_body,triceps
+440,balance cable incline fly,2,isolation_upper,pectorals
+441,lever lateral raise,2,isolation_upper,delts
+442,ez bar seated close grip concentration curl,2,isolation_upper,biceps
+443,dumbbell lateral raise,2,isolation_upper,delts
+445,knee touch crunch,2,core,abs
+446,dumbbell standing one arm reverse curl,2,isolation_upper,biceps
+448,barbell reverse grip incline bench press,3,push_horizontal,pectorals
+449,chin-up diagonal,4,pull_vertical,lats
+450,dumbbell decline bench press,4,push_horizontal,pectorals
+451,triple style sled one leg calf press on leg press,3,squat,calves
+452,cable drag curl,2,isolation_upper,biceps
+453,barbell standing overhead triceps extension,2,isolation_upper,triceps
+455,jump rope,3,plyometric,cardiovascular system
+456,dumbbell one arm reverse fly (with support),2,isolation_upper,delts
+457,weighted front raise,2,isolation_upper,delts
+458,dumbbell revers grip biceps curl,2,isolation_upper,biceps
+459,self assisted inverse leg curl,2,hinge,hamstrings
+460,band hip lift,3,hinge,glutes
+462,dumbbell reverse fly,2,isolation_upper,delts
+530,dumbbell push press,3,push_vertical,delts
+464,barbell squat (on knees) with pure,3,squat,quads
+465,dumbbell contralateral forward lunge,3,lunge,glutes
+466,reverse grip machine lat pulldown,2,pull_vertical,lats
+467,cable shrug,3,isolation_upper,traps
+468,cable deadlift,4,hinge,glutes
+469,scissor jumps (male),2,plyometric,cardiovascular system
+470,cable one arm preacher curl,2,isolation_upper,biceps
+471,barbell bench press,4,push_horizontal,pectorals
+473,dumbbell rear delt row_shoulder,3,pull_horizontal,delts
+474,barbell narrow stance squat,3,squat,glutes
+475,dumbbell standing one arm curl over incline bench,2,isolation_upper,biceps
+476,barbell lying extension,2,isolation_upper,triceps
+477,dumbbell seated kickback,2,isolation_upper,triceps
+478,barbell bent arm pullover - powerful variation,3,pull_vertical,lats
+479,quarter sit-up,2,core,abs
+480,dumbbell lying elbow press,3,full_body,triceps
+483,incline push up depth jump with complex,2,plyometric,pectorals
+484,modified hindu push-up (male),2,push_horizontal,pectorals
+485,barbell reverse preacher curl inclined,2,isolation_upper,biceps
+486,posterior step to overhead reach,2,core,abs
+487,dumbbell incline fly,2,isolation_upper,pectorals
+488,smith decline bench press,4,push_horizontal,pectorals
+489,barbell speed squat,3,squat,glutes
+490,band standing twisting crunch,2,core,abs
+492,lever seated crunch v. 2,2,core,abs
+493,landmine lateral raise,2,isolation_upper,delts
+494,exercise ball alternating arm ups,3,pull_vertical,lats
+495,cable reverse wrist curl,2,isolation_upper,forearms
+497,cable kneeling rear delt row (with rope) (male) expanded,3,pull_horizontal,delts
+498,weighted decline sit-up,2,core,abs
+499,band reverse wrist curl,2,isolation_upper,forearms
+500,ring dips,2,full_body,triceps
+502,dumbbell seated shoulder press (parallel grip),3,push_vertical,delts
+503,dumbbell peacher hammer curl,2,isolation_upper,biceps
+504,kneeling lat stretch,1,pull_vertical,lats
+505,dumbbell incline biceps curl,2,isolation_upper,biceps
+506,assisted standing pull-up,4,pull_vertical,lats
+507,fierce weighted straight bar dip,3,push_horizontal,pectorals
+508,cable squat row (with rope attachment),3,squat,lats
+509,incline push-up (on box),2,push_horizontal,pectorals
+511,lever gripless shrug,3,isolation_upper,traps
+512,astride jumps (male),2,plyometric,cardiovascular system
+513,barbell standing wide grip biceps curl,2,isolation_upper,biceps
+514,one arm dip,2,full_body,triceps
+515,flexible assisted prone hamstring,3,hinge,hamstrings
+516,weighted straight bar dip,3,push_horizontal,pectorals
+517,chair leg extended stretch with modified,1,squat,quads
+518,dumbbell one arm standing curl,2,isolation_upper,biceps
+519,frog crunch,2,core,abs
+521,lever one arm bent over row,3,pull_horizontal,upper back
+522,cable twist (up-down),3,core,abs
+523,barbell upright row v. 3,3,pull_horizontal,delts
+524,inverted style inverse leg curl (on pull-up cable machine),2,hinge,hamstrings
+525,dumbbell lying femoral,3,hinge,hamstrings
+526,single leg calf raise (on a dumbbell),2,isolation_lower,calves
+527,back and forth step,2,full_body,cardiovascular system
+528,ez barbell anti gravity press,3,push_vertical,delts
+529,dumbbells seated triceps extension,2,isolation_upper,triceps
+533,triceps press,2,full_body,triceps
+534,dumbbell side lying one hand raise,2,push_vertical,delts
+536,lever t-bar reverse grip row,3,pull_horizontal,upper back
+537,cable low fly,2,isolation_upper,pectorals
+538,cable standing shoulder external rotation,3,push_vertical,delts
+539,weighted one hand pull up,4,pull_vertical,lats
+540,dumbbell seated one leg calf raise - hammer grip,2,isolation_lower,calves
+550,chin-ups (narrow parallel grip),4,pull_vertical,upper back
+542,dumbbell hammer curl on exercise ball,2,isolation_upper,biceps
+543,dumbbell alternate hammer preacher curl,2,isolation_upper,biceps
+544,weighted russian twist,3,core,abs
+545,cable curl,2,isolation_upper,biceps
+546,macro style weighted one hand pull up,4,pull_vertical,lats
+547,curl-up,2,core,abs
+548,sled lying calf press,3,full_body,calves
+549,cable kneeling rear delt row (with rope) (male),3,pull_horizontal,delts
+552,barbell sitted alternate leg raise,2,core,abs
+553,ez bar reverse grip bent over row,3,pull_horizontal,upper back
+554,kettlebell one arm row,3,pull_horizontal,upper back
+555,back lever,5,pull_horizontal,upper back
+556,cable triceps pushdown (v-bar),2,isolation_upper,triceps
+557,cable alternate triceps extension,2,isolation_upper,triceps
+558,incline scapula push up,2,push_horizontal,serratus anterior
+559,hanging pike with intense,2,core,abs
+561,sled closer hack squat,3,squat,glutes
+562,barbell overhead squat,3,squat,quads
+563,dumbbell step-up lunge,2,lunge,quads
+564,barbell single leg split squat,3,lunge,quads
+565,dumbbell seated alternate front raise,2,isolation_upper,delts
+566,dumbbell standing alternating tricep kickback,2,isolation_upper,triceps
+567,glute bridge march,2,hinge,glutes
+568,weighted close grip chin-up on dip cage,4,pull_vertical,lats
+570,dumbbell single leg deadlift,4,hinge,glutes
+571,exercise ball supine triceps extension,2,isolation_upper,triceps
+572,high style scapula push-up,2,push_horizontal,serratus anterior
+573,stability ball crunch (full range hands behind head),2,core,abs
+574,barbell high bar squat,3,squat,glutes
+575,dumbbell hammer curls (with arm blaster),2,isolation_upper,biceps
+576,cable lateral raise,2,isolation_upper,delts
+577,exercise ball one legged diagonal kick hamstring curl,2,hinge,glutes
+579,barbell decline bench press,4,push_horizontal,pectorals
+580,bodyweight side lying biceps curl,2,isolation_upper,biceps
+581,upper back stretch,1,pull_horizontal,upper back
+582,sit-up with arms on chest with mini,2,core,abs
+583,dumbbell lying one arm deltoid rear,3,push_vertical,delts
+584,alternating bear crawl,2,full_body,cardiovascular system
+585,weighted three bench dips,3,full_body,triceps
+586,deep smith machine reverse decline close grip bench press,2,push_horizontal,pectorals
+587,smith chair squat,2,squat,quads
+589,lever deadlift,4,hinge,glutes
+590,biceps pull-up,4,pull_vertical,biceps
+591,cable reverse one arm curl,2,isolation_upper,biceps
+592,dumbbell concentration curl,2,isolation_upper,biceps
+593,dumbbell incline one arm fly,2,isolation_upper,pectorals
+594,full planche push-up,5,push_horizontal,pectorals
+595,horizontal dumbbell standing alternate overhead press,4,push_vertical,delts
+596,weighted cossack squats (male),3,squat,glutes
+598,barbell incline close grip bench press,3,push_horizontal,triceps
+599,assisted lying calves stretch,1,full_body,calves
+601,barbell guillotine bench press,3,push_horizontal,pectorals
+602,kneeling plank tap shoulder (male),2,core,abs
+603,stationary bike run,3,full_body,cardiovascular system
+604,dumbbell biceps curl v sit on bosu ball,2,isolation_upper,biceps
+605,band v-up,3,core,abs
+606,dumbbell single leg squat,3,squat,glutes
+608,cable two arm curl on incline bench,2,isolation_upper,biceps
+609,kettlebell turkish get up (squat style),3,squat,glutes
+610,ez barbell close grip preacher curl,2,isolation_upper,biceps
+611,cable hip adduction,3,isolation_lower,adductors
+612,isometric chest squeeze,2,push_horizontal,pectorals
+613,front lever reps,5,pull_horizontal,upper back
+614,barbell split squat v. 2,3,lunge,quads
+615,assisted side lying adductor stretch,1,full_body,adductors
+617,dumbbell cross body hammer curl v. 2,2,isolation_upper,biceps
+618,cable kickback,2,isolation_upper,triceps
+619,smith standing back wrist curl,2,isolation_upper,forearms
+620,straddle maltese,5,core,abs
+621,seated leg raise,2,core,abs
+622,cable one arm fly on exercise ball,2,isolation_upper,pectorals
+623,seated wide angle pose sequence,2,hinge,hamstrings
+624,barbell decline wide-grip pullover,3,pull_vertical,lats
+625,barbell lying close-grip triceps extension,2,isolation_upper,triceps
+627,exercise ball hip flexor stretch pointed,1,hinge,glutes
+628,barbell decline wide-grip press,3,push_horizontal,pectorals
+629,barbell decline bent arm pullover,3,pull_vertical,lats
+630,weighted pull-up,4,pull_vertical,lats
+631,ez barbell jm bench press,3,push_horizontal,triceps
+632,left hook. boxing,2,push_vertical,delts
+634,dumbbell standing preacher curl,2,isolation_upper,biceps
+635,dumbbell seated lateral raise v. 2,2,isolation_upper,delts
+637,smith sprint lunge,3,lunge,glutes
+638,dumbbell squat,3,squat,glutes
+639,smith standing behind head military press,3,push_vertical,delts
+640,star jump (male),2,plyometric,cardiovascular system
+641,resistance band seated shoulder press with declined,3,push_vertical,delts
+642,barbell side split squat v. 2,3,lunge,quads
+643,cable forward raise,2,push_vertical,delts
+644,cable low seated row,3,pull_horizontal,upper back
+646,dumbbell preacher curl over exercise ball,2,isolation_upper,biceps
+647,cable incline triceps extension,2,isolation_upper,triceps
+648,dumbbell seated lateral raise,2,isolation_upper,delts
+649,45° side bend,2,core,abs
+650,dumbbell incline fly on exercise ball,2,isolation_upper,pectorals
+652,cable standing reverse grip one arm overhead tricep extension,2,isolation_upper,triceps
+653,weighted svend press,3,push_horizontal,pectorals
+654,hanging leg raise,2,core,abs
+657,kettlebell double push press,3,push_vertical,delts
+658,kettlebell alternating hang clean,3,full_body,forearms
+659,decline push-up,2,push_horizontal,pectorals
+660,complete style ez bar lying close grip triceps extension behind head,2,isolation_upper,triceps
+661,barbell pullover,3,pull_vertical,lats
+662,dumbbell straight arm pullover,3,push_horizontal,pectorals
+663,half knee bends (male),2,full_body,cardiovascular system
+664,dumbbell seated one leg calf raise,2,isolation_lower,calves
+666,suspended push-up,2,push_horizontal,pectorals
+667,quick feet v. 2 with bent,2,squat,quads
+668,lever narrow grip seated row - strength variation,3,pull_horizontal,upper back
+669,chest and front of shoulder stretch micro,1,push_horizontal,pectorals
+670,lever seated calf press,3,isolation_lower,calves
+671,lever seated squat calf raise on leg press machine,2,squat,calves
+672,barbell drag curl,2,isolation_upper,biceps
+673,barbell front chest squat,3,squat,glutes
+675,lever narrow grip seated row,3,pull_horizontal,upper back
+676,dumbbell seated hammer curl,2,isolation_upper,biceps
+677,dumbbell decline shrug - rigid variation,3,isolation_upper,traps
+678,dumbbell lying pullover on exercise ball,3,push_horizontal,pectorals
+679,gironda sternum chin,2,pull_vertical,lats
+680,barbell deadlift,4,hinge,glutes
+681,squat jerk,3,squat,quads
+682,dead bug,2,core,abs
+684,cable overhead curl on exercise ball,2,isolation_upper,biceps
+685,box jump down with one leg stabilization,2,plyometric,calves
+686,dumbbell side bend,3,core,abs
+687,dumbbell upright row (back pov),3,pull_horizontal,delts
+688,barbell seated calf raise,2,isolation_lower,calves
+689,half sit-up (male),2,core,abs
+690,fierce style forward lunge (male),2,lunge,glutes
+691,side-to-side chin,2,pull_vertical,lats
+692,roller back stretch,1,full_body,spine
+694,dumbbell over bench one arm neutral wrist curl,2,isolation_upper,biceps
+696,cable judo flip with static,3,core,abs
+697,barbell full squat (side pov),3,squat,glutes
+698,dumbbell alternate side press,3,push_vertical,delts
+699,barbell lying triceps extension,2,isolation_upper,triceps
+700,walking lunge,2,lunge,glutes
+701,weighted one hand pull up fast,4,pull_vertical,lats
+702,assisted triceps dip (kneeling),3,full_body,triceps
+704,contracted kettlebell extended range one arm press on floor,3,push_horizontal,pectorals
+705,exercise ball on the wall calf raise (tennis ball between knees),2,isolation_lower,calves
+706,dumbbell alternating seated bicep curl on exercise ball,2,isolation_upper,biceps
+707,cable upper chest crossovers,3,push_horizontal,pectorals
+708,walking on stepmill,3,full_body,cardiovascular system
+709,walking high knees lunge,2,lunge,cardiovascular system
+710,spine stretch,1,full_body,spine
+711,rough cable decline fly,2,isolation_upper,pectorals
+713,inverted row with straps,2,pull_horizontal,upper back
+714,dumbbell incline one arm hammer press on exercise ball,3,full_body,triceps
+715,side lying floor stretch,1,pull_vertical,lats
+716,medicine ball chest push single response,3,push_horizontal,pectorals
+717,standing archer,2,pull_horizontal,upper back
+718,smith squat,3,squat,glutes
+719,dumbbell incline t-raise,2,push_vertical,delts
+720,smith narrow row,3,pull_horizontal,upper back
+722,dumbbell seated bench extension,2,isolation_upper,triceps
+723,dumbbell preacher curl,2,isolation_upper,biceps
+724,smith standing military press,3,push_vertical,delts
+725,dumbbell one arm seated hammer curl,2,isolation_upper,biceps
+726,band two legs calf raise - (band under both legs) v. 2,2,isolation_lower,calves
+727,wide hand push up,2,push_horizontal,pectorals
+728,outside leg kick push-up,2,hinge,glutes
+729,cable standing twist row (v-bar),3,pull_horizontal,upper back
+731,trap bar deadlift,4,hinge,glutes
+732,barbell stiff leg good morning,4,hinge,glutes
+733,barbell one arm bent over row,3,pull_horizontal,upper back
+734,barbell wide bench press,3,push_horizontal,pectorals
+735,weighted muscle up,5,pull_vertical,lats
+736,ez barbell seated curls,2,isolation_upper,biceps
+737,side hip (on parallel bars),2,core,abs
+738,scapula push-up,2,push_horizontal,serratus anterior
+741,dumbbell one arm prone curl,2,isolation_upper,biceps
+742,stability style band kneeling one arm pulldown,3,pull_vertical,lats
+743,dumbbell incline shrug,3,isolation_upper,traps
+744,dumbbell seated bent arm lateral raise,2,isolation_upper,delts
+745,weighted squat,3,squat,glutes
+746,weighted triceps dip on high parallel bars,3,full_body,triceps
+747,dumbbell lying one arm press v. 2,3,push_horizontal,pectorals
+803,pull-up,4,pull_vertical,lats
+749,reclining big toe pose with rope,3,hinge,hamstrings
+750,band underhand pulldown,3,pull_vertical,lats
+751,lunge with twist,2,lunge,abs
+753,band jack knife sit-up,2,core,abs
+754,barbell high bar squat core,3,squat,glutes
+755,cable decline seated wide-grip row,3,pull_horizontal,upper back
+756,barbell sumo deadlift,4,hinge,glutes
+758,push-up to side plank,2,core,abs
+759,band bench press,3,push_horizontal,pectorals
+760,cable alternate shoulder press,3,push_vertical,delts
+761,dumbbell over bench one arm wrist curl,2,isolation_upper,forearms
+762,assisted pull-up,4,pull_vertical,lats
+763,lever reverse grip preacher curl,2,isolation_upper,biceps
+764,kettlebell bent press,3,core,abs
+765,crunch (hands overhead),2,core,abs
+767,exercise ball one leg prone lower body rotation fierce,3,hinge,glutes
+768,band vertical pallof press - seated variation,3,core,abs
+769,band one arm standing low row,3,pull_horizontal,upper back
+770,wheel run,2,full_body,cardiovascular system
+771,band concentration curl,2,isolation_upper,biceps
+772,forward lunge (male),2,lunge,glutes
+773,dumbbell seated triceps extension,2,isolation_upper,triceps
+774,dumbbell waiter biceps curl,2,isolation_upper,biceps
+776,exercise ball dip,3,full_body,triceps
+778,lever reverse hyperextension,2,hinge,glutes
+779,barbell seated overhead press,4,push_vertical,delts
+780,kettlebell plyo push-up,2,plyometric,pectorals
+781,standing wheel rollerout,3,core,abs
+782,barbell seated calf raise,2,isolation_lower,calves
+1327,push-up medicine ball,2,push_horizontal,pectorals
+786,kettlebell pirate supper legs,3,push_vertical,delts
+787,cable kneeling triceps extension,2,isolation_upper,triceps
+788,dumbbell lying one arm rear lateral raise,2,isolation_upper,delts
+789,precision style lever bent-over row with v-bar,3,pull_horizontal,upper back
+790,dumbbell zottman curl,2,isolation_upper,biceps
+791,barbell step-up,2,lunge,glutes
+792,dumbbell seated inner biceps curl,2,isolation_upper,biceps
+804,exercise ball prone leg raise,2,core,spine
+794,barbell standing wide military press,3,push_vertical,delts
+795,ez barbell incline triceps extension,2,isolation_upper,triceps
+796,band standing crunch,2,core,abs
+797,flexion leg sit up (straight arm),2,core,abs
+798,push-up close-grip off dumbbell,2,push_horizontal,triceps
+799,dumbbell lying extension (across face),2,isolation_upper,triceps
+800,kettlebell figure 8,3,core,abs
+801,band seated twist pure,3,core,abs
+802,dumbbell standing front raise above head,2,isolation_upper,delts
+807,push-up (wall),2,push_horizontal,pectorals
+808,cable lat pulldown full range of motion,3,pull_vertical,lats
+809,firm style hanging oblique knee raise,2,core,abs
+810,smith front squat (clean grip),4,squat,glutes
+811,sharp style dumbbell sumo pull through,3,hinge,glutes
+812,band straight back stiff leg deadlift,4,hinge,glutes
+822,weighted donkey calf raise,2,isolation_lower,calves
+814,dumbbell pullover hip extension on exercise ball,2,isolation_upper,pectorals
+815,dumbbell one arm prone hammer curl,2,isolation_upper,biceps
+816,jump squat,2,plyometric,glutes
+817,cable lying fly,2,isolation_upper,pectorals
+818,elbow dips,2,full_body,triceps
+819,dumbbell incline one arm hammer press,3,full_body,triceps
+820,dumbbell incline one arm fly on exercise ball,2,isolation_upper,pectorals
+821,assisted standing chin-up with focused,4,pull_vertical,lats
+824,barbell rear delt raise,2,pull_horizontal,delts
+825,single leg platform slide,2,hinge,hamstrings
+826,chest dip on straight bar,2,push_horizontal,pectorals
+828,cable wrist curl,2,isolation_upper,forearms
+829,smith reverse calf raises,2,isolation_lower,calves
+830,barbell zercher squat,3,squat,glutes
+831,barbell reverse wrist curl,2,isolation_upper,forearms
+834,barbell standing reverse grip curl,2,isolation_upper,biceps
+835,lean planche,5,core,abs
+836,dumbbell seated revers grip concentration curl,2,isolation_upper,biceps
+837,all fours squad stretch - elevated variation,1,squat,quads
+838,calf stretch with hands against wall,1,full_body,calves
+839,dumbbell lying supination,3,full_body,forearms
+840,weighted standing curl,2,isolation_upper,biceps
+842,kettlebell double snatch,5,full_body,delts
+845,stretched full planche push-up,5,push_horizontal,pectorals
+846,jackknife sit-up,2,core,abs
+847,weighted muscle up (on bar),5,pull_vertical,lats
+848,crunch (on stability ball),2,core,abs
+849,quads complex,2,squat,quads
+850,bench pull-ups,4,pull_vertical,lats
+851,prisoner half sit-up (male),2,core,abs
+1023,calf push stretch with hands against wall,1,full_body,calves
+853,cable one arm press on exercise ball,3,push_horizontal,pectorals
+854,lever gripper hands,3,full_body,forearms
+855,dumbbell bench squat,3,squat,glutes
+856,dumbbell lying triceps extension,2,isolation_upper,triceps
+857,lying leg-hip raise - contracted variation,2,core,abs
+858,straight leg outer hip abductor,2,core,abductors
+859,controlled wrist rollerer,3,full_body,forearms
+860,jack burpee,2,plyometric,cardiovascular system
+861,kettlebell arnold press - beginner variation,3,push_vertical,delts
+863,lever rotary calf,3,full_body,calves
+864,inverse leg curl (bench support),2,hinge,hamstrings
+865,skin the cat,2,pull_horizontal,upper back
+866,cable front shoulder raise,2,push_vertical,delts
+867,dumbbell finger curls,2,isolation_upper,forearms
+868,dumbbell rear delt raise,2,pull_horizontal,delts
+869,weighted bench dip,3,full_body,triceps
+870,single arm push-up,2,push_horizontal,pectorals
+881,dumbbell lying pronation,3,full_body,forearms
+872,dumbbell single arm overhead carry,3,full_body,delts
+873,quick feet v. 2,2,squat,quads
+874,groin crunch,2,core,abs
+875,dumbbell prone incline curl,2,isolation_upper,biceps
+876,inverted row on bench,2,pull_horizontal,upper back
+877,lever leg extension,2,isolation_lower,quads
+878,smith decline reverse-grip press,3,push_horizontal,pectorals
+879,lever seated reverse fly,2,isolation_upper,delts
+880,tough cable one arm lateral raise,2,isolation_upper,delts
+883,smith back shrug,3,isolation_upper,traps
+884,lever assisted chin-up with twisted,4,pull_vertical,lats
+885,dumbbell one arm lateral raise,2,isolation_upper,delts
+886,side cable high row (kneeling),3,pull_horizontal,upper back
+887,wheel rollerout,3,core,abs
+888,arms overhead full sit-up (male),2,core,abs
+889,dumbbell one arm triceps extension (on bench),2,isolation_upper,triceps
+890,dumbbell biceps curl,2,isolation_upper,biceps
+892,reverse crunch,2,core,abs
+893,barbell standing wide-grip curl,2,isolation_upper,biceps
+894,ez bar lying bent arms pullover,3,pull_vertical,lats
+895,floor fly (with barbell),2,isolation_upper,pectorals
+896,dumbbell biceps curl reverse,2,isolation_upper,biceps
+897,cable lateral pulldown (with rope attachment) core,3,pull_vertical,lats
+898,dumbbell lying alternate extension,2,isolation_upper,triceps
+899,smith rear delt row,3,pull_horizontal,delts
+902,twisted side-to-side chin,2,pull_vertical,lats
+903,cable seated chest press,3,push_horizontal,pectorals
+904,dumbbell biceps curl squat,2,squat,biceps
+905,dumbbell shrug,3,isolation_upper,traps
+906,pelvic tilt,2,core,abs
+907,dumbbell decline one arm fly,2,isolation_upper,pectorals
+908,dumbbell alternate preacher curl,2,isolation_upper,biceps
+909,dumbbell biceps curl (with arm blaster),2,isolation_upper,biceps
+911,lever kneeling leg curl,2,hinge,hamstrings
+912,smith full squat,3,squat,glutes
+913,single leg squat (pistol) male,2,squat,glutes
+914,dumbbell incline bench press,3,push_horizontal,pectorals
+915,barbell sitted alternate leg raise (female) with intermediate,2,core,abs
+916,resistance band seated straight back row,3,pull_horizontal,upper back
+917,hanging pike,2,core,abs
+918,light lever standing chest press,3,push_horizontal,pectorals
+921,dumbbell incline raise,2,push_vertical,delts
+922,reverse dip,2,full_body,triceps
+924,lever incline chest press v. 2,3,push_horizontal,pectorals
+925,exercise ball back extension with hands behind head,2,hinge,spine
+926,olympic barbell hammer curl,2,isolation_upper,biceps
+927,wide-grip chest dip on high parallel bars,2,push_horizontal,pectorals
+1062,weighted hanging leg-hip raise,2,core,abs
+929,bodyweight standing one arm row (with towel),2,pull_horizontal,upper back
+930,dumbbell one arm bench fly,2,isolation_upper,pectorals
+931,traditional barbell romanian deadlift,4,hinge,glutes
+932,intensified style kettlebell extended range one arm press on floor,3,push_horizontal,pectorals
+933,smith machine incline tricep extension,2,isolation_upper,triceps
+934,dumbbell reverse preacher curl,2,isolation_upper,biceps
+935,dumbbell press on exercise ball,3,push_horizontal,pectorals
+936,monster walk,2,hinge,glutes
+938,lever hammer grip preacher curl,2,isolation_upper,biceps
+939,band side triceps extension,2,isolation_upper,triceps
+940,dumbbell standing one arm palm in press,3,push_vertical,delts
+941,dumbbell seated biceps curl to shoulder press,2,isolation_upper,biceps
+942,medicine ball overhead slam,3,pull_horizontal,upper back
+943,lever seated hip adduction,3,isolation_lower,adductors
+944,lever one arm lateral high row,3,pull_horizontal,upper back
+945,dynamic style barbell lying back of the head tricep extension,2,isolation_upper,triceps
+946,run,2,full_body,cardiovascular system
+948,cable palm rotational row,3,pull_horizontal,upper back
+949,dynamic style band side triceps extension,2,isolation_upper,triceps
+950,intense barbell straight leg deadlift,4,hinge,hamstrings
+951,roller hip stretch,1,hinge,glutes
+953,dumbbell straight leg deadlift,4,hinge,glutes
+954,lever hip extension v. 2,2,hinge,glutes
+955,cable cross-over lateral pulldown,3,pull_vertical,lats
+957,barbell squat (on knees),3,squat,quads
+958,reverse hyper on flat bench,2,hinge,glutes
+959,lever unilateral row,3,pull_horizontal,upper back
+960,kettlebell one arm push press,3,push_vertical,delts
+961,dumbbell decline triceps extension,2,isolation_upper,triceps
+962,cable lying bicep curl,2,isolation_upper,biceps
+963,smith shrug,3,isolation_upper,traps
+964,dumbbell incline triceps extension,2,isolation_upper,triceps
+968,wide grip rear pull-up,4,pull_vertical,lats
+969,leg pull in flat bench,2,core,abs
+970,tire flip,3,hinge,glutes
+971,sled 45в° leg wide press - blunt variation,3,hinge,glutes
+972,cable one arm incline fly on exercise ball,2,isolation_upper,pectorals
+973,two toe touch (male),2,core,spine
+974,cable preacher curl,2,isolation_upper,biceps
+1022,barbell lateral lunge,3,lunge,glutes
+976,cable standing cross-over high reverse fly,2,isolation_upper,delts
+977,iron cross stretch - deep variation,5,hinge,glutes
+978,push up on bosu ball with improved,2,push_horizontal,pectorals
+979,spell caster,3,core,abs
+980,spider crawl push up,2,hinge,glutes
+981,hyght dumbbell fly,2,isolation_upper,pectorals
+982,assisted chest dip (kneeling),3,push_horizontal,pectorals
+983,hands bike,3,push_horizontal,pectorals
+984,dumbbell incline y-raise,2,pull_horizontal,upper back
+986,pulse style walk elliptical cross trainer,3,full_body,cardiovascular system
+987,dumbbell one arm incline chest press,3,push_horizontal,pectorals
+988,controlled band straight back stiff leg deadlift,4,hinge,glutes
+989,dumbbell standing triceps extension,2,isolation_upper,triceps
+990,band shoulder press,3,push_vertical,delts
+991,exercise ball back extension with arms extended,2,hinge,spine
+992,walk elliptical cross trainer - expanded variation,3,full_body,cardiovascular system
+993,dumbbell incline hammer press,3,push_horizontal,pectorals
+995,dumbbell one leg fly on exercise ball,2,isolation_upper,pectorals
+996,hanging straight leg hip raise,2,core,abs
+997,resistance band hip thrusts on knees (female),3,hinge,glutes
+998,front lever,5,core,abs
+999,rough band push sit-up,2,core,abs
+1000,barbell jefferson squat,3,squat,glutes
+1001,kipping muscle up,5,pull_vertical,lats
+1002,lunge with jump,2,plyometric,glutes
+1004,exercise ball seated triceps stretch wide,1,full_body,triceps
+1006,assisted wide-grip chest dip (kneeling),3,push_horizontal,pectorals
+1007,dumbbell neutral grip bench press,3,push_horizontal,triceps
+1008,flag,2,core,abs
+1009,lever seated leg raise crunch,2,core,abs
+1010,cable supine reverse fly,2,isolation_upper,delts
+1011,cable upper row,3,pull_horizontal,upper back
+1012,cable standing fly,2,isolation_upper,pectorals
+1014,push to run,2,full_body,cardiovascular system
+1015,cable pushdown (straight arm) v. 2,2,isolation_upper,lats
+1017,medicine ball catch and overhead throw,3,pull_vertical,lats
+1018,push-up plus,2,push_horizontal,pectorals
+1019,cable seated high row (v-bar),3,pull_vertical,lats
+1020,medicine ball chest push with run release,3,push_horizontal,pectorals
+1021,arm slingers hanging straight legs,2,core,abs
+1025,iron cross stretch,5,hinge,glutes
+1026,cable side crunch,2,core,abs
+1027,cable lying extension pullover (with rope attachment),2,isolation_upper,lats
+1028,drop push up,2,push_horizontal,pectorals
+1030,hanging straight twisting leg hip raise,2,core,abs
+1031,lever bicep curl,2,isolation_upper,biceps
+1032,dumbbell seated alternate shoulder,3,push_vertical,delts
+1033,dumbbell one arm wrist curl,2,isolation_upper,forearms
+1035,dumbbell high curl,2,isolation_upper,biceps
+1036,cable side bend crunch (bosu ball),2,core,abs
+1037,alternate heel touchers,2,core,abs
+1038,all fours squad stretch,1,squat,quads
+1039,push-up (wall) with static,2,push_horizontal,pectorals
+1040,squat to overhead reach,2,squat,quads
+1041,butt-ups,2,core,abs
+1042,sled 45в° calf press,3,full_body,calves
+1139,weighted crunch,2,core,abs
+1045,cable pulldown (pro lat bar),3,pull_vertical,lats
+1046,shoulder tap push-up,2,push_horizontal,pectorals
+1047,dumbbell cuban press,3,push_vertical,delts
+1048,micro style barbell speed squat,3,squat,glutes
+1049,seated lower back stretch,1,pull_vertical,lats
+1050,cable standing lift,3,core,abs
+1051,barbell glute bridge two legs on bench (male),3,hinge,glutes
+1052,barbell clean-grip front squat,4,squat,glutes
+1054,dumbbell step-up split squat,2,lunge,quads
+1055,barbell glute bridge,3,hinge,glutes
+1056,forward lunge (male) with bench,2,lunge,glutes
+1057,decline sit-up,2,core,abs
+1058,back extension on exercise ball,2,hinge,spine
+1059,dumbbell seated alternate hammer curl on exercise ball,2,isolation_upper,biceps
+1060,dumbbell incline one arm press on exercise ball with extended,3,push_horizontal,pectorals
+1061,dumbbell lying wide curl,2,isolation_upper,biceps
+1064,behind head chest stretch,1,push_horizontal,pectorals
+1065,standing calves calf stretch,1,full_body,calves
+1066,cable one arm incline press with rigid,3,push_horizontal,pectorals
+1067,wind sprints,2,core,abs
+1068,farmers walk,3,squat,quads
+1069,suspended split squat,2,lunge,quads
+1070,wide grip pull-up,4,pull_vertical,lats
+1071,intermediate style dumbbell preacher curl over exercise ball,2,isolation_upper,biceps
+1072,cable one arm tricep pushdown,2,isolation_upper,triceps
+1074,dumbbell seated alternate press,3,push_vertical,delts
+1076,rough cable standing one arm triceps extension,2,isolation_upper,triceps
+1077,oblique crunches floor,2,core,abs
+1078,dumbbell single leg split squat,3,lunge,quads
+1079,barbell full squat,3,squat,glutes
+1080,seated piriformis stretch,1,hinge,glutes
+1081,dumbbell cross body hammer curl,2,isolation_upper,biceps
+1386,balance board,2,squat,quads
+1083,landmine 180,3,core,abs
+1085,barbell pendlay row,3,pull_horizontal,upper back
+1086,suspended reverse crunch,2,core,abs
+1087,band assisted pull-up,4,pull_vertical,lats
+1088,dumbbell seated calf raise,2,isolation_lower,calves
+1089,dumbbell one arm fly on exercise ball improved,2,isolation_upper,pectorals
+1090,dumbbell supported squat,3,squat,quads
+1091,cambered bar lying row,3,pull_horizontal,upper back
+1093,dumbbell incline curl v. 2,2,isolation_upper,biceps
+1094,cross body crunch,2,core,abs
+1095,dumbbell incline one arm press,3,push_horizontal,pectorals
+1097,dumbbell one arm decline chest press,3,push_horizontal,pectorals
+1098,dumbbell lying supination on floor,3,full_body,forearms
+1099,sledge hammer,3,core,abs
+1100,kettlebell one arm floor press,3,push_horizontal,pectorals
+1101,barbell wide-grip upright row,3,pull_horizontal,delts
+1103,barbell standing leg calf raise,2,isolation_lower,calves
+1104,battling ropes,3,push_vertical,delts
+1105,mountain climber,2,full_body,cardiovascular system
+1107,walk elliptical cross trainer,3,full_body,cardiovascular system
+1108,twin handle parallel grip lat pulldown,3,pull_vertical,lats
+1109,side bridge v. 2,2,core,abs
+1110,single leg bridge with outstretched leg,1,hinge,glutes
+1112,frog planche,5,core,abs
+1113,assisted lying gluteus and piriformis stretch,1,hinge,glutes
+1114,cable reverse crunch,2,core,abs
+1115,handstand push-up,5,push_vertical,triceps
+1116,dumbbell romanian deadlift,4,hinge,glutes
+1117,dumbbell front raise v. 2,2,isolation_upper,delts
+1118,bench dip (knees bent),2,full_body,triceps
+1119,dumbbell lunge,3,lunge,glutes
+1120,kettlebell extended range one arm press on floor,3,push_horizontal,pectorals
+1122,one arm against wall compressed,2,pull_vertical,lats
+1123,exercise ball lying side lat stretch,1,pull_vertical,lats
+1125,lever back extension,2,hinge,spine
+1126,cable pulldown,3,pull_vertical,lats
+1127,korean dips,2,push_horizontal,pectorals
+1129,barbell squat jump step rear lunge,3,plyometric,quads
+1140,resistance band seated shoulder press,3,push_vertical,delts
+1131,bodyweight kneeling triceps extension,2,isolation_upper,triceps
+1132,band seated twist,3,core,abs
+1133,weighted seated twist (on stability ball),3,core,abs
+1135,dumbbell plyo squat,3,plyometric,glutes
+1136,dumbbell tate press,3,full_body,triceps
+1137,barbell wide squat,3,squat,quads
+1138,barbell standing front raise over head,2,isolation_upper,delts
+1142,barbell rear delt row,3,pull_horizontal,delts
+1143,hanging pike weak,2,core,abs
+1144,backward jump,2,plyometric,quads
+1145,lever triceps extension,2,isolation_upper,triceps
+1147,dumbbell decline one arm hammer press,3,full_body,triceps
+1148,power clean,5,hinge,hamstrings
+1149,barbell palms up wrist curl over a bench,2,isolation_upper,forearms
+1151,biceps leg concentration curl,2,isolation_upper,biceps
+1152,cable rope seated row,3,pull_horizontal,upper back
+1153,roller reverse crunch,2,core,abs
+1155,cocoons,2,core,abs
+1156,exercise ball lat stretch,1,pull_vertical,lats
+1157,"crunch (on stability ball, arms straight)",2,core,abs
+1158,barbell lying lifting (on hip),3,hinge,glutes
+1159,plyo push up,2,plyometric,pectorals
+1161,swimmer kicks v. 2 (male),2,hinge,glutes
+1162,cable rear pulldown,3,pull_vertical,lats
+1163,dumbbell bench press,4,push_horizontal,pectorals
+1164,dumbbell rear lunge,3,lunge,glutes
+1165,band reverse fly,2,isolation_upper,delts
+1166,band front lateral raise,2,isolation_upper,delts
+1167,leg up hamstring stretch,1,hinge,hamstrings
+1168,march sit (wall),2,hinge,glutes
+1169,exercise ball pike push up,2,push_horizontal,pectorals
+1171,dumbbell one arm zottman preacher curl,2,isolation_upper,biceps
+1173,barbell lying preacher curl,2,isolation_upper,biceps
+1174,rotated dumbbell pronate-grip triceps extension,2,isolation_upper,triceps
+1175,negative crunch,2,core,abs
+1176,lever kneeling twist,3,core,abs
+1177,barbell reverse grip bent over row,3,pull_horizontal,upper back
+1178,lever chest press,3,push_horizontal,pectorals
+1189,crunch floor,2,core,abs
+1180,chin-up,4,pull_vertical,lats
+1181,barbell lunge,3,lunge,glutes
+1182,mixed grip chin-up,4,pull_vertical,lats
+1183,ez barbell decline close grip face press - mini variation,3,full_body,triceps
+1184,cable incline fly,2,isolation_upper,pectorals
+1185,band standing rear delt row,3,pull_horizontal,delts
+1186,jump squat v. 2,2,plyometric,glutes
+1187,band front raise,2,isolation_upper,delts
+1188,intermediate hip flexor and quad stretch,1,squat,quads
+1191,push-up (on stability ball),2,push_horizontal,pectorals
+1193,dumbbell seated curl,2,isolation_upper,biceps
+1194,bodyweight standing close-grip row,2,pull_horizontal,upper back
+1195,sled 45в° leg wide press,3,hinge,glutes
+1196,ez-bar biceps curl (with arm blaster),2,isolation_upper,biceps
+1197,swing 360,2,full_body,cardiovascular system
+1198,cable straight back seated row,3,pull_horizontal,upper back
+1199,band shrug,3,isolation_upper,traps
+1201,lever one arm lateral wide pulldown,3,pull_vertical,lats
+1202,intermediate style kneeling plank tap shoulder (male),2,core,abs
+1203,band squat,3,squat,glutes
+1204,inchworm v. 2,2,core,abs
+1205,dumbbell incline alternate press,3,push_horizontal,pectorals
+1206,cable tuck reverse crunch,2,core,abs
+1207,band bicycle crunch,2,core,abs
+1208,kettlebell double jerk,3,push_vertical,delts
+1211,prone dumbbell upright shoulder external rotation,3,push_vertical,delts
+1212,bench hip extension,2,hinge,glutes
+1213,cable front raise,2,isolation_upper,delts
+1214,cable rope lying on floor tricep extension,2,isolation_upper,triceps
+1215,intense kettlebell two arm row,3,pull_horizontal,upper back
+1216,band twisting overhead press,4,push_vertical,delts
+1217,donkey calf raise,2,isolation_lower,calves
+1227,kneeling jump squat,3,plyometric,glutes
+1219,body-up,2,full_body,triceps
+1220,dumbbell incline two arm extension,2,isolation_upper,triceps
+1221,barbell upright row,3,pull_horizontal,delts
+1222,kettlebell seesaw press,3,push_vertical,delts
+1223,cable seated twist,3,core,abs
+1224,band close-grip push-up,2,push_horizontal,triceps
+1226,cable rope crossover seated row,3,pull_horizontal,upper back
+1238,kettlebell arnold press,3,push_vertical,delts
+1229,kettlebell swing,3,hinge,glutes
+1230,supine style band alternating v-up,3,core,abs
+1231,dumbbell reverse bench press,3,push_horizontal,pectorals
+1232,dumbbell standing palms in press,3,push_vertical,delts
+1233,dumbbell seated neutral wrist curl,2,isolation_upper,biceps
+1234,cable standing up straight crossovers,3,push_horizontal,pectorals
+1235,barbell one leg squat,3,squat,quads
+1236,resistance band leg extension declined,2,isolation_lower,quads
+1237,ankle circles,2,full_body,calves
+1240,dumbbell standing kickback,2,isolation_upper,triceps
+1241,band one arm overhead biceps curl,2,isolation_upper,biceps
+1242,cable side bend smooth,3,core,abs
+1243,triceps stretch,1,full_body,triceps
+1245,rear decline bridge,2,hinge,glutes
+1246,l-sit on floor,2,core,abs
+1247,pull-in (on stability ball),3,core,abs
+1248,dumbbell bicep curl with stork stance,2,isolation_upper,biceps
+1250,side wrist pull stretch,1,full_body,forearms
+1251,chest and front of shoulder stretch,1,push_horizontal,pectorals
+1252,bodyweight standing row (with towel),2,pull_horizontal,upper back
+1253,otis up,3,core,abs
+1254,flutter kicks,2,core,glutes
+1255,arm slingers hanging bent knee legs,2,core,abs
+1256,inverted row v. 2,2,pull_horizontal,upper back
+1257,cable lying triceps extension v. 2,2,isolation_upper,triceps
+1258,lever lying two-one leg curl,2,hinge,hamstrings
+1260,dumbbell rear lateral raise (support head),2,isolation_upper,delts
+1261,forward jump,2,plyometric,quads
+1262,lever alternate leg press,3,squat,quads
+1263,dumbbell rear lateral raise,2,isolation_upper,delts
+1264,bodyweight standing close-grip one arm row,2,pull_horizontal,upper back
+1265,close-grip push-up (on knees),2,push_horizontal,triceps
+1266,lever seated fly,2,isolation_upper,pectorals
+1267,ez barbell close-grip curl,2,isolation_upper,biceps
+1268,half knee bends (male) with blunt,2,full_body,cardiovascular system
+1270,lever military press with strength,3,push_vertical,delts
+1271,barbell rear lunge,3,lunge,glutes
+1272,cable press on exercise ball,3,push_horizontal,pectorals
+1273,weighted front plank,2,core,abs
+1274,ez barbell reverse grip preacher curl,2,isolation_upper,biceps
+1275,dumbbell one arm reverse spider curl,2,isolation_upper,biceps
+1276,hanging leg hip raise,2,core,abs
+1277,assisted prone hamstring,3,hinge,hamstrings
+1278,cable floor seated wide-grip row,3,pull_horizontal,upper back
+1280,cable standing back wrist curl,2,isolation_upper,forearms
+1281,dumbbell around pullover,3,push_horizontal,pectorals
+1282,band lying hip internal rotation,3,hinge,glutes
+1283,cable reverse-grip pushdown,2,isolation_upper,triceps
+1285,weighted round arm,3,push_vertical,delts
+1286,reverse hyper extension (on stability ball),2,hinge,glutes
+1287,dumbbell w-press,3,push_vertical,delts
+1288,blunt cable standing crunch,2,core,abs
+1290,cable rope incline tricep extension - reverse variation,2,isolation_upper,triceps
+1291,side plank hip adduction,2,core,adductors
+1292,calf push stretch with hands against wall elite,1,full_body,calves
+1293,gentle style dumbbell one leg fly on exercise ball,2,isolation_upper,pectorals
+1294,inclined style pelvic tilt into bridge,2,hinge,glutes
+1295,cable seated one arm alternate row,3,pull_horizontal,upper back
+1296,inverted row bent knees,2,pull_horizontal,upper back
+1297,ski ergometer,3,full_body,triceps
+1300,lever shoulder press v. 2,3,push_vertical,delts
+1301,barbell full zercher squat,3,squat,glutes
+1302,single smith shoulder press,3,push_vertical,delts
+1303,assisted parallel close grip pull-up,4,pull_vertical,lats
+1304,barbell standing concentration curl,2,isolation_upper,biceps
+1305,macro style close-grip push-up,2,push_horizontal,triceps
+1306,lever decline chest press,3,push_horizontal,pectorals
+1307,band pull through,3,hinge,glutes
+1309,triceps dip (bench leg),2,full_body,triceps
+1310,band wrist curl,2,isolation_upper,forearms
+1311,cable two arm tricep kickback,2,isolation_upper,triceps
+1312,glute-ham raise,2,hinge,hamstrings
+1314,assisted lying leg raise with throw down,2,core,abs
+1315,dumbbell incline rear lateral raise,2,isolation_upper,delts
+1316,dumbbell one arm hammer press on exercise ball,3,full_body,triceps
+1319,chest stretch with exercise ball partial,1,push_horizontal,pectorals
+1320,lever alternating narrow grip seated row,3,pull_horizontal,upper back
+1321,barbell side split squat,3,lunge,quads
+1322,smith one arm row linear,3,pull_horizontal,upper back
+1323,cable one arm decline chest fly,2,isolation_upper,pectorals
+1324,dumbbell kickback,2,isolation_upper,triceps
+1325,active style cable pushdown,2,isolation_upper,triceps
+1326,wall style dumbbell one arm french press on exercise ball,3,full_body,triceps
+1329,lever standing chest press,3,push_horizontal,pectorals
+1330,elbow lift - reverse push-up,2,push_horizontal,upper back
+1331,side-to-side toe touch (male),2,core,abs
+1332,smith close-grip bench press,3,push_horizontal,triceps
+1333,bodyweight standing row,2,pull_horizontal,upper back
+1334,machine inner chest press,2,push_horizontal,pectorals
+1335,barbell standing close grip military press,3,push_vertical,delts
+1337,captains chair straight leg raise,2,core,abs
+1339,kettlebell two arm row,3,pull_horizontal,upper back
+1340,bodyweight drop jump squat,2,plyometric,glutes
+1341,hanging straight twisting leg hip raise with compound,2,core,abs
+1342,lever seated crunch,2,core,abs
+1343,triceps dip (between benches),2,full_body,triceps
+1345,lying leg raise flat bench,2,core,abs
+1346,smith wide grip decline bench press,4,push_horizontal,pectorals
+1347,clap push up,2,push_horizontal,pectorals
+1349,kettlebell lunge pass through,3,lunge,glutes
+1350,side bridge hip abduction,2,core,abductors
+1351,barbell prone incline curl,2,isolation_upper,biceps
+1352,cable low seated row controlled,3,pull_horizontal,upper back
+1353,exercise ball back extension with knees off ground,2,hinge,spine
+1354,barbell press sit-up,2,core,abs
+1355,dumbbell tricep kickback with stork stance,2,isolation_upper,triceps
+1356,incline push-up (on box) - active variation,2,push_horizontal,pectorals
+1358,cable side bend,3,core,abs
+1359,barbell romanian deadlift,4,hinge,glutes
+1360,cable rear delt row (with rope),3,pull_horizontal,delts
+1361,cable one arm straight back high row (kneeling),3,pull_horizontal,upper back
+1362,band bent-over hip extension,2,hinge,glutes
+1363,dumbbell palm rotational bent over row,3,pull_horizontal,upper back
+1364,olympic barbell triceps extension,2,isolation_upper,triceps
+1365,weighted russian twist (legs up),3,core,abs
+1367,push up on bosu ball,2,push_horizontal,pectorals
+1368,cable kneeling crunch,2,core,abs
+1369,sled 45 degrees one leg press,3,squat,glutes
+1370,smith single leg split squat,3,lunge,quads
+1371,push and pull bodyweight,2,push_horizontal,pectorals
+1372,dumbbell lying one arm pronated triceps extension,2,isolation_upper,triceps
+1373,dumbbell seated bent over alternate kickback,2,isolation_upper,triceps
+1374,neck side stretch,1,full_body,levator scapulae
+1375,dumbbell upright shoulder external rotation,3,push_vertical,delts
+1377,suspended abdominal fallout,2,core,abs
+1378,cable straight arm pulldown,3,pull_vertical,lats
+1379,triceps dip,2,full_body,triceps
+1380,close-grip push-up,2,push_horizontal,triceps
+1382,circles knee stretch,1,full_body,calves
+1383,cable seated rear lateral raise,2,isolation_upper,delts
+1384,incline reverse grip push-up,2,push_horizontal,pectorals
+1385,dumbbell forward lunge triceps extension,2,lunge,triceps
+1388,cable underhand pulldown,3,pull_vertical,lats
+1389,slow leg pull in flat bench,2,core,abs
+1390,dumbbell around pullover - intensive variation,3,push_horizontal,pectorals
+1391,standing behind neck press,3,push_vertical,delts
+1393,sissy squat,2,squat,quads
+1395,roller body saw,3,core,abs
+1480,barbell palms down wrist curl over a bench,2,isolation_upper,forearms
+1397,chair leg extended stretch,1,squat,quads
+1398,crab twist toe touch,2,core,abs
+1399,chest dip (on dip-pull-up cage),4,push_horizontal,pectorals
+1400,peroneals stretch,1,full_body,calves
+1402,barbell incline shoulder raise,2,full_body,serratus anterior
+1403,dumbbell seated bicep curl,2,isolation_upper,biceps
+1404,rear deltoid stretch,1,pull_horizontal,delts
+1405,standing calves,2,full_body,calves
+1407,cable middle fly,2,isolation_upper,pectorals
+1408,barbell good morning,4,hinge,hamstrings
+1409,dumbbell lateral to front raise,2,isolation_upper,delts
+1410,weighted overhead crunch (on stability ball),2,core,abs
+1411,hold style dumbbell alternating seated bicep curl on exercise ball,2,isolation_upper,biceps
+1412,barbell standing ab rollerout,3,core,abs
+1413,barbell reverse curl,2,isolation_upper,biceps
+1414,exercise ball on the wall calf raise,2,isolation_lower,calves
+1416,clock push-up extreme,2,push_horizontal,pectorals
+1417,pike-to-cobra push-up,2,hinge,glutes
+1418,dumbbell one arm prone hammer curl - macro variation,2,isolation_upper,biceps
+1419,lever seated good morning,4,hinge,glutes
+1420,cycle cross trainer,3,full_body,cardiovascular system
+1421,standing hamstring and calf stretch with strap,1,hinge,hamstrings
+1422,cable standing crunch (with rope attachment),2,core,abs
+1423,dumbbell lying rear delt row,3,pull_horizontal,upper back
+1425,russian twist,2,core,abs
+1426,dumbbell lying supine biceps curl,2,isolation_upper,biceps
+1427,dumbbell decline fly,2,isolation_upper,pectorals
+1428,dumbbell arnold press,3,push_vertical,delts
+1429,resistance band leg extension,2,isolation_lower,quads
+1430,push-up (on stability ball),2,push_horizontal,pectorals
+1431,smith toe raise,2,full_body,calves
+1432,run (equipment),2,full_body,cardiovascular system
+1434,ez barbell reverse grip curl,2,isolation_upper,biceps
+1435,barbell bench front squat,4,squat,quads
+1436,band single leg split squat,3,lunge,quads
+1437,cable squat row (with rope attachment) heavy,3,squat,lats
+1438,seated side crunch (wall),2,core,abs
+1439,barbell reverse wrist curl - prone variation,2,isolation_upper,forearms
+1440,rope climb,3,pull_horizontal,upper back
+1441,reverse grip pull-up,4,pull_vertical,lats
+1443,smith machine decline close grip bench press,2,push_horizontal,triceps
+1444,kettlebell one arm military press to the side,3,push_vertical,delts
+1445,ez barbell spider curl,2,isolation_upper,biceps
+1446,lever preacher curl v. 2,2,isolation_upper,biceps
+1448,barbell lying back of the head tricep extension,2,isolation_upper,triceps
+1468,dumbbell one arm seated neutral wrist curl,2,isolation_upper,forearms
+1469,shoulder grip pull-up,4,pull_vertical,lats
+1470,cable one arm curl,2,isolation_upper,biceps
+1472,cable rear delt row (stirrups),3,pull_horizontal,delts
+1473,assisted prone lying quads stretch,1,squat,quads
+1474,smith reverse calf raises,2,isolation_lower,calves
+1475,cable standing inner curl,2,isolation_upper,biceps
+1476,kettlebell thruster,3,full_body,delts
+1477,full planche,5,core,abs
+1478,dumbbell fly,2,isolation_upper,pectorals
+1479,barbell alternate biceps curl,2,isolation_upper,biceps
+1482,dumbbell twisting bench press,3,push_horizontal,triceps
+1483,kettlebell goblet squat,3,squat,glutes
+1484,barbell rack pull,4,hinge,glutes
+1485,cable twisting pull,3,pull_vertical,lats
+1486,stalder press,2,full_body,triceps
+1487,dumbbell one arm reverse grip press,3,push_horizontal,pectorals
+1488,kettlebell seated two arm military press,3,push_vertical,delts
+1489,skater hops,2,full_body,cardiovascular system
+1491,band push sit-up,2,core,abs
+1492,barbell front squat,4,squat,glutes
+1493,lever seated leg curl,2,hinge,hamstrings
+1494,dumbbell lying one arm press,3,push_horizontal,pectorals
+1495,inchworm,2,core,abs
+1496,cable thibaudeau kayak row,3,pull_vertical,lats
+1497,band fixed back underhand pulldown,3,pull_vertical,lats
+1498,cable assisted inverse leg curl,2,hinge,hamstrings
+1500,hyperextension,2,hinge,spine
+1501,dumbbell one arm french press on exercise ball,3,full_body,triceps
+1502,smith machine bicep curl,2,isolation_upper,biceps
+1503,dumbbell reverse grip incline bench one arm row,3,pull_horizontal,upper back
+1504,smith reverse-grip press,3,push_horizontal,pectorals
+1505,hyperextension (on bench),2,hinge,spine
+1506,kipping muscle up with triple,5,pull_vertical,lats
+1507,vertical leg raise (on parallel bars),2,core,abs
+1509,barbell pullover to press,3,pull_vertical,lats
+1510,hug keens to chest,2,hinge,glutes
+1511,dumbbell seated shoulder press,3,push_vertical,delts
+1512,smith wide grip bench press,3,push_horizontal,pectorals
+1513,kneeling push-up (male),2,push_horizontal,pectorals
+1514,lever reverse grip vertical row,3,pull_horizontal,upper back
+1515,barbell jm bench press,3,push_horizontal,triceps
+1517,self assisted inverse leg curl (on floor),2,hinge,hamstrings
+1519,cable rope incline tricep extension,2,isolation_upper,triceps
+1521,v-sit on floor,2,core,abs
+1522,dumbbell alternating bicep curl with leg raised on exercise ball,2,core,biceps
+1523,smith bent over row,3,pull_horizontal,upper back
+1524,cable one arm reverse preacher curl,2,isolation_upper,biceps
+1525,elevator,2,pull_horizontal,upper back
+1526,lever shrug,3,isolation_upper,traps
+1449,weighted russian twist v. 2,3,core,abs
+1456,sled 45в° leg press (back pov),3,squat,glutes
+1459,hands reversed clasped circular toe touch (male),2,core,glutes
+72,barbell lying triceps extension double,2,isolation_upper,triceps
+73,stability lever narrow grip seated row,3,pull_horizontal,upper back
+75,dumbbell bicep curl lunge with bowling motion,2,lunge,biceps
+36,dumbbell standing reverse curl,2,isolation_upper,biceps
+1528,one arm against wall,2,pull_vertical,lats
+68,dumbbell incline twisted flyes,2,isolation_upper,pectorals
+64,dumbbell single leg calf raise,2,isolation_lower,calves
+38,dumbbell burpee,2,plyometric,cardiovascular system
+44,smith seated one leg calf raise,2,isolation_lower,calves
+45,pull up (neutral grip),4,pull_vertical,lats
+48,sled 45в° leg press,3,squat,glutes
+78,extended style inverted row,2,pull_horizontal,upper back
+87,barbell floor calf raise,2,isolation_lower,calves
+88,cable overhead triceps extension (rope attachment),2,isolation_upper,triceps
+96,dumbbell hammer curl v. 2,2,isolation_upper,biceps
+108,cable twisting pull with intensified,3,pull_vertical,lats
+111,barbell wide reverse grip bench press horizontal,3,push_horizontal,pectorals
+117,cable squatting curl,2,squat,biceps
+124,barbell standing close grip curl,2,isolation_upper,biceps
+127,sled 45 degrees one leg press pointed,3,squat,glutes
+136,band fixed back close grip pulldown,3,pull_vertical,lats
+146,squat to overhead reach with twist,2,squat,quads
+149,assisted pull-up inclined,4,pull_vertical,lats
+157,bodyweight incline side plank,2,core,abs
+166,dumbbell incline shoulder raise,2,full_body,serratus anterior
+167,dumbbell alternate seated hammer curl,2,isolation_upper,biceps
+172,smith standing leg calf raise,2,isolation_lower,calves
+174,dumbbell one arm snatch,5,hinge,glutes
+177,cable one arm incline press on exercise ball,3,push_horizontal,pectorals
+185,dumbbell step up single leg balance with bicep curl,2,isolation_upper,biceps
+186,fluid dumbbell step-up lunge,2,lunge,quads
+195,chest tap push-up (male),2,push_horizontal,pectorals
+197,lever front pulldown,3,pull_vertical,lats
+204,dumbbell standing concentration curl,2,isolation_upper,biceps
+213,kettlebell alternating press on floor,3,push_horizontal,pectorals
+223,dumbbell seated one arm bicep curl on exercise ball with leg raised,2,core,biceps
+233,assisted hanging knee raise with throw down,2,core,abs
+243,decline crunch,2,core,abs
+252,sled lying squat,3,squat,glutes
+261,dumbbell pullover,3,push_horizontal,pectorals
+262,barbell incline bench press seated,3,push_horizontal,pectorals
+270,archer push up,2,push_horizontal,pectorals
+279,band y-raise,2,push_vertical,delts
+280,dumbbell upright row,3,pull_horizontal,delts
+288,flexion leg sit up (bent knee),2,core,abs
+290,modified push up to lower arms,2,push_horizontal,forearms
+294,squared reverse grip machine lat pulldown,2,pull_vertical,lats
+297,twist hip lift,2,hinge,glutes
+298,kettlebell one arm snatch,5,full_body,delts
+300,dumbbell step-up,2,lunge,glutes
+306,exercise ball alternating arm ups with fast,3,pull_vertical,lats
+316,cable close grip curl,2,isolation_upper,biceps
+323,dumbbell incline one arm press on exercise ball,3,push_horizontal,pectorals
+326,dumbbell bent over row,3,pull_horizontal,upper back
+336,dumbbell lying external shoulder rotation,3,push_vertical,delts
+345,dumbbell cuban press v. 2,3,push_vertical,delts
+355,dumbbell one arm reverse wrist curl,2,isolation_upper,forearms
+366,standing single leg curl,2,hinge,hamstrings
+376,dumbbell kickbacks on exercise ball,2,isolation_upper,triceps
+381,dumbbell alternate biceps curl (with arm blaster),2,isolation_upper,biceps
+386,bottoms-up,2,core,abs
+395,smith hip raise,2,core,abs
+396,cable lateral pulldown (with rope attachment),3,pull_vertical,lats
+406,lever overhand triceps dip,3,full_body,triceps
+415,kettlebell front squat,4,squat,glutes
+423,snatch pull,5,squat,quads
+425,ez barbell decline close grip face press,3,full_body,triceps
+434,lever chest press,3,push_horizontal,pectorals
+444,cable straight arm pulldown (with rope),3,pull_vertical,lats
+447,cable pushdown (with rope attachment),2,isolation_upper,triceps
+454,smith sumo squat,3,squat,glutes
+461,high knee against wall,2,full_body,cardiovascular system
+463,barbell lying close-grip press,3,full_body,triceps
+472,cable one arm bent over row,3,pull_horizontal,upper back
+481,cable reverse curl,2,isolation_upper,biceps
+482,dumbbell arnold press v. 2,3,push_vertical,delts
+491,incline leg hip raise (leg straight),2,core,abs
+496,cable bar lateral pulldown,3,pull_vertical,lats
+501,barbell bent over row,3,pull_horizontal,upper back
+510,barbell thruster,3,full_body,delts
+520,cable standing one leg calf raise,2,isolation_lower,calves
+532,wide-grip chest dip on high parallel bars - low variation,2,push_horizontal,pectorals
+535,cable seated row,3,pull_horizontal,upper back
+541,exercise ball on the wall calf raise (tennis ball between ankles),2,isolation_lower,calves
+551,band vertical pallof press,3,core,abs
+560,barbell single leg deadlift,4,hinge,glutes
+569,cable one arm incline press,3,push_horizontal,pectorals
+578,smith behind neck press,3,push_vertical,delts
+588,curtsey squat,2,squat,glutes
+597,self assisted inverse leg curl,2,hinge,hamstrings
+600,barbell rollerout from bench,3,core,abs
+607,barbell lying triceps extension skull crusher,2,isolation_upper,triceps
+616,power point plank,2,core,abs
+626,one arm chin-up,4,pull_vertical,lats
+633,cable hammer curl (with rope),2,isolation_upper,biceps
+636,barbell straight leg deadlift,4,hinge,hamstrings
+645,athletic style battling ropes,3,push_vertical,delts
+651,suspended abdominal fallout - inclined variation,2,core,abs
+655,push-up,2,push_horizontal,pectorals
+656,barbell side bent v. 2,3,core,abs
+665,ez barbell seated triceps extension,2,isolation_upper,triceps
+674,prone medicine ball close grip push up,2,push_horizontal,triceps
+683,dumbbell lying on floor rear delt raise,2,pull_horizontal,delts
+693,pure chin-up,4,pull_vertical,lats
+695,cable reverse preacher curl,2,isolation_upper,biceps
+703,barbell close-grip bench press,3,push_horizontal,triceps
+712,one arm slam (with medicine ball),3,core,abs
+721,lever incline chest press,3,push_horizontal,pectorals
+730,cable standing crunch,2,core,abs
+739,endurance style one arm dip,2,full_body,triceps
+740,elbow-to-knee,2,core,abs
+748,dumbbell one arm concentration curl (on stability ball),2,isolation_upper,biceps
+752,kettlebell advanced windmill,3,core,abs
+757,cable decline one arm press,3,push_horizontal,pectorals
+766,push-up to side plank - athletic variation,2,core,abs
+775,cable standing hip extension,2,hinge,glutes
+777,dumbbell reverse grip row (female) hold,3,pull_horizontal,upper back
+783,band straight leg deadlift,4,hinge,spine
+784,dumbbell lying supine curl,2,isolation_upper,biceps
+785,band stiff leg deadlift,4,hinge,glutes
+793,lever reverse grip lateral pulldown,3,pull_vertical,lats
+805,dumbbell incline inner biceps curl,2,isolation_upper,biceps
+806,dumbbell standing alternate hammer curl and press,2,isolation_upper,biceps
+813,kettlebell hang clean,3,hinge,hamstrings
+823,barbell decline close grip to skull press,3,full_body,triceps
+827,fast band straight leg deadlift,4,hinge,spine
+832,dumbbell fly on exercise ball,2,isolation_upper,pectorals
+833,lever bent-over row with v-bar,3,pull_horizontal,upper back
+841,exercise ball one leg prone lower body rotation,3,hinge,glutes
+843,ez barbell close grip preacher curl - precision variation,2,isolation_upper,biceps
+844,lever assisted chin-up,4,pull_vertical,lats
+852,cable rope extension incline bench row,2,isolation_upper,upper back
+862,inverted style smith seated shoulder press,3,push_vertical,delts
+871,cable judo flip,3,core,abs
+882,dumbbell lunge with bicep curl,2,lunge,biceps
+891,push-up (wall) v. 2,2,push_horizontal,pectorals
+900,barbell seated behind head military press,3,push_vertical,delts
+901,dumbbell reverse grip row (female),3,pull_horizontal,upper back
+910,cable rope high pulley overhead tricep extension,2,isolation_upper,triceps
+919,dumbbell deadlift,4,hinge,glutes
+920,cable concentration curl,2,isolation_upper,biceps
+923,lever high row,3,pull_horizontal,upper back
+928,improved sphinx,2,full_body,spine
+937,kettlebell double windmill,3,core,abs
+947,cable pull through (with rope),3,hinge,glutes
+952,wall style dumbbell pullover hip extension on exercise ball,2,isolation_upper,pectorals
+956,side push neck stretch,1,full_body,levator scapulae
+965,dumbbell incline palm-in press,3,push_horizontal,pectorals
+966,ez-barbell standing wide grip biceps curl,2,isolation_upper,biceps
+967,cable triceps pushdown (v-bar) (with arm blaster),2,isolation_upper,triceps
+975,dumbbell standing zottman preacher curl,2,isolation_upper,biceps
+985,cable rope hammer preacher curl,2,isolation_upper,biceps
+994,band one arm standing low row - lateral variation,3,pull_horizontal,upper back
+1003,band kneeling one arm pulldown,3,pull_vertical,lats
+1005,cable reverse-grip straight back seated high row,3,pull_horizontal,upper back
+1013,dumbbell rotation reverse fly,2,isolation_upper,delts
+1016,weighted drop push up,2,push_horizontal,pectorals
+1024,cable shoulder press,3,push_vertical,delts
+1029,smith one arm row,3,pull_horizontal,upper back
+1034,sled hack squat,3,squat,glutes
+1043,cable seated wide-grip row,3,pull_horizontal,upper back
+1044,barbell revers wrist curl v. 2,2,isolation_upper,forearms
+1053,fast style resistance band seated hip abduction,3,core,abductors
+1063,barbell preacher curl,2,isolation_upper,biceps
+1073,band single leg reverse calf raise,2,isolation_lower,calves
+1075,cable pulldown bicep curl,2,isolation_upper,biceps
+1082,smith machine reverse decline close grip bench press,2,push_horizontal,pectorals
+1084,dumbbell one arm press on exercise ball,3,push_horizontal,pectorals
+1092,assisted motion russian twist,3,core,abs
+1096,dumbbell decline twist fly,2,isolation_upper,pectorals
+1102,smith low bar squat,3,squat,glutes
+1106,walking on incline treadmill,3,full_body,cardiovascular system
+1111,assisted seated pectoralis major stretch with stability ball,1,push_horizontal,pectorals
+1121,dumbbell standing around world,3,push_vertical,delts
+1124,arms apart circular toe touch (male),2,core,glutes
+1128,dumbbell close-grip press,3,full_body,triceps
+1130,cable seated one arm concentration curl,2,isolation_upper,biceps
+1179,squat on bosu ball,3,squat,quads
+1134,kettlebell one arm jerk,3,push_vertical,delts
+1141,dumbbell one arm seated bicep curl on exercise ball,2,isolation_upper,biceps
+1146,barbell clean and press,3,squat,quads
+1150,dumbbell incline one arm press on exercise ball modified,3,push_horizontal,pectorals
+1154,dumbbell hammer curl,2,isolation_upper,biceps
+1160,diamond push-up,2,push_horizontal,triceps
+1170,dumbbell standing alternate raise,2,push_vertical,delts
+1172,cable standing one arm triceps extension,2,isolation_upper,triceps
+1190,reverse plank with leg lift,2,core,abs
+1192,cable reverse grip triceps pushdown (sz-bar) (with arm blaster),2,isolation_upper,triceps
+1200,smith bench press,3,push_horizontal,pectorals
+1209,low glute bridge on floor,2,hinge,glutes
+1210,sled one leg calf press on leg press,3,squat,calves
+1218,cable one arm pulldown,3,pull_vertical,lats
+1225,smith deadlift,4,hinge,glutes
+1228,assisted lying leg raise with lateral throw down,2,core,abs
+1308,barbell one arm floor press,3,full_body,triceps
+1239,barbell prone incline curl with intensive,2,isolation_upper,biceps
+1244,dumbbell seated one leg calf raise - hammer grip deep,2,isolation_lower,calves
+1249,scapular pull-up,4,pull_vertical,traps
+1259,dumbbell lunge with firm,3,lunge,glutes
+1269,kick out sit,2,hinge,hamstrings
+1279,cable incline bench press,3,push_horizontal,pectorals
+1284,dumbbell standing inner biceps curl v. 2,2,isolation_upper,biceps
+1289,close grip chin-up,4,pull_vertical,lats
+1299,dumbbell seated one arm kickback,2,isolation_upper,triceps
+1313,dumbbell seated one leg calf raise - palm up,2,isolation_lower,calves
+1317,kettlebell one arm clean and jerk,5,full_body,delts
+1318,band squat row,3,squat,glutes
+1328,barbell bench squat,3,squat,quads
+1336,cable overhead curl,2,isolation_upper,biceps
+1338,cable one arm lateral raise,2,isolation_upper,delts
+1344,dumbbell seated biceps curl (on stability ball),2,isolation_upper,biceps
+1348,dumbbell incline hammer press on exercise ball,3,full_body,triceps
+1357,side push-up,2,push_horizontal,triceps
+1366,exercise ball back extension with rotation,2,hinge,spine
+1376,lever bent over row,3,pull_horizontal,upper back
+1381,dumbbell side plank with rear fly,2,core,upper back
+1387,bodyweight standing one arm row,2,pull_horizontal,upper back
+1392,sled forward angled calf raise,2,isolation_lower,calves
+1394,dumbbell step up single leg balance with bicep curl - chair variation,2,isolation_upper,biceps
+1396,resistance band seated biceps curl,2,isolation_upper,biceps
+1401,barbell one arm snatch,5,full_body,delts
+1406,lever seated reverse fly (parallel grip),2,isolation_upper,delts
+1415,handstand,2,full_body,triceps
+1424,smith seated shoulder press,3,push_vertical,delts
+1433,dumbbell zottman preacher curl,2,isolation_upper,biceps
+1442,cable incline bench row,3,pull_horizontal,upper back
+1447,dumbbell one arm lateral raise with support,2,isolation_upper,delts
+1471,exercise ball lower back stretch (pyramid),1,pull_vertical,lats
+1481,overhead triceps stretch,1,full_body,triceps
+1490,cable standing rear delt row (with rope),3,pull_horizontal,delts
+1499,band assisted wheel rollerout,3,core,abs
+1508,lever seated crunch (chest pad),2,core,abs
+1516,cable high row (kneeling),3,pull_horizontal,upper back
+1518,band alternating v-up,3,core,abs
+1520,smith hack squat,3,squat,glutes
+1527,dumbbell lying one arm supinated triceps extension,2,isolation_upper,triceps

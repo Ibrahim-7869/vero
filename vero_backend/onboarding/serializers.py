@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import OnboardingProfile
+from .models import OnboardingProfile, BuildTemplate, PhysiqueProfile
 
 
 class OnboardingProfileSerializer(serializers.ModelSerializer):
@@ -16,7 +16,6 @@ class OnboardingProfileSerializer(serializers.ModelSerializer):
             "primary_goal",
             "success_vision",
             "success_vision_other",
-            "body_type",
             "equipment",
             "time_per_session",
             "days_per_week",
@@ -25,7 +24,15 @@ class OnboardingProfileSerializer(serializers.ModelSerializer):
             "sleep_hours",
             "stress_level",
             "smokes_or_drinks",
-            "eating_habits",
+            "eating_habits"
+            "age",
+            "gender",
+            "weight_kg",
+            "height_cm",
+            "experience_level",
+            "dietary_restrictions",
+            "cuisine_preferance",
+            "ai_exclusions",
             "completed_at",
         ]
         read_only_fields = ["id", "completed_at"]
@@ -48,3 +55,29 @@ class OnboardingProfileSerializer(serializers.ModelSerializer):
                 {"success_vision_other": "Please specify since you selected 'Something else'."}
             )
         return data
+    
+class BuildTemplateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildTemplate
+        fields = ["id", "name", "description", "somatotype", "image_url",
+                  "lagging_muscles", "developed_muscles", "posture_notes",
+                  "training_focus", "is_active"]
+        
+class PhysiqueProfileSerializer(serializers.ModelSerializer):
+    build_template = BuildTemplateSerializer(read_only=True)
+
+    class Meta:
+        model = PhysiqueProfile
+        fields = ["id", "somatotype", "estimated_body_fat_range", "lagging_muscles",
+                  "developed_muscles", "training_focus", "target_calories",
+                  "target_protein_g", "target_carbs_g", "target_fats_g",
+                  "is_current", "build_template"]
+              
+class CreatePhysiqueFromTemplateSerializer(serializers.Serializer):
+    build_template_id = serializers.IntegerField()
+    auto_generate_plan = serializers.BooleanField(default=True)
+    
+    def validate_build_template_id(self, value):
+        if not BuildTemplate.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Build template not found or inactive.")
+        return value

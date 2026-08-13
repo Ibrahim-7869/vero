@@ -1,22 +1,28 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-export default function Sidebar({ 
-    isRestDay, 
-    todayDayId, 
-    onStartWorkout, 
-    startingWorkout, 
-    todaySessionDone 
+export default function Sidebar({
+    isRestDay,
+    todayDayId,
+    onStartWorkout,
+    startingWorkout,
+    todaySessionDone
 }) {
     const { logout } = useAuth();
     const navigate = useNavigate();
 
     const NAV_ITEMS = [
         { to: "/dashboard", label: "Home", icon: "home" },
-        { to: todayDayId ? `/workout/day/${todayDayId}` : "/dashboard", label: "Workouts", icon: "fitness_center" },
+        {
+            to: todayDayId ? `/workout/day/${todayDayId}` : "/dashboard",
+            label: "Workouts",
+            icon: "fitness_center",
+            isFallback: !todayDayId // Flag to track if it's just a dummy link
+        },
         { to: "/progress", label: "Progress", icon: "leaderboard" },
         { to: "/chat", label: "Chat", icon: "chat_bubble" },
         { to: "/profile", label: "Profile", icon: "person" },
+        { to: "/nutrition", label: "Nutrition", icon: "restaurant" },
     ];
 
     function handleLogout() {
@@ -41,12 +47,16 @@ export default function Sidebar({
                     <NavLink
                         key={item.label}
                         to={item.to}
-                        className={({ isActive }) =>
-                            `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
+                        onClick={item.isFallback ? (e) => e.preventDefault() : undefined}
+                        className={({ isActive }) => {
+                            // Force "inactive" visually if it's the fallback link
+                            const active = item.isFallback ? false : isActive;
+
+                            return `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${active
                                 ? "text-primary font-bold border-l-4 border-primary bg-surface-tint-teal/10"
                                 : "text-text-secondary hover:bg-surface-container-high"
-                            }`
-                        }
+                                }`;
+                        }}
                     >
                         <span className="material-symbols-outlined">{item.icon}</span>
                         <span>{item.label}</span>
@@ -55,8 +65,7 @@ export default function Sidebar({
             </div>
 
             <div className="mt-auto pt-4 space-y-2">
-                {/* Rest Day State */}
-                {isRestDay ? (
+                {!onStartWorkout ? null : isRestDay ? (
                     <div className="w-full flex items-center gap-3 px-4 py-3 text-text-secondary text-sm">
                         <span className="material-symbols-outlined text-lg">self_improvement</span>
                         <span>Rest day today</span>

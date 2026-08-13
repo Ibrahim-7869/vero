@@ -18,6 +18,7 @@ import WorkoutDetail from "./pages/WorkoutDetail";
 import Progress from "./pages/Progress";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
+import NutritionDashboard from "./components/NutritionDashboard";
 
 
 function App() {
@@ -45,13 +46,14 @@ function App() {
               </OnboardingProvider>
             }
           />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/workout/session/:sessionId" element={<ProtectedRoute><ActiveWorkout /></ProtectedRoute>} />
           <Route path="/workout/complete/:sessionId" element={<ProtectedRoute><WorkoutComplete /></ProtectedRoute>} />
           <Route path="/workout/day/:dayId" element={<ProtectedRoute><WorkoutDetail /></ProtectedRoute>} />
           <Route path="/progress" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
           <Route path="/chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/nutrition" element={<ProtectedRoute><NutritionDashboard /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -49,12 +49,15 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
+    
     "accounts",
     "onboarding",
     "exercises",
     "plans",
     "logs",
     "chat",
+    "health",
+    "nutrition",
 ]
 
 MIDDLEWARE = [
@@ -170,3 +173,5 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Vero <majidibrahim113@gmail.com>")
 GEMINI_API_KEY = config("GEMINI_API_KEY", default="")
 GROQ_API_KEY = config("GROQ_API_KEY", default="")
+ENABLE_AI_IMAGE_ANALYSIS = config("ENABLE_AI_IMAGE_ANALYSIS", default=False, cast=bool)
+USDA_API_KEY = config("USDA_API_KEY", default="")

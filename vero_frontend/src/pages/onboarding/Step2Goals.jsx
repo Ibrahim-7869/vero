@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOnboarding } from "../../context/OnboardingContext";
+import { getBuildTemplates } from "../../api/onboarding";
 
 const GOALS = [
     { value: "lose_weight", label: "Lose weight", icon: "monitor_weight" },
@@ -12,43 +13,43 @@ const GOALS = [
 const SUCCESS_OPTIONS = [
     { value: "noticeably_fitter", label: "Noticeably fitter" },
     { value: "clothing_size", label: "Down a clothing size" },
-    { value: "consistent_habit", label: "Consistent habit builtvital_signs" },
+    { value: "consistent_habit", label: "Consistent habit built" },
     { value: "muscle_definition", label: "Visible muscle definition" },
     { value: "other", label: "Something else" },
-];
-
-const BODY_TYPES = [
-    { value: "slim", label: "Slim", icon: "accessibility" },
-    { value: "average", label: "Average", icon: "accessibility" },
-    { value: "athletic", label: "Athletic", icon: "accessibility_new" },
-    { value: "larger_build", label: "Larger build", icon: "directions_run" },
 ];
 
 export default function Step2Goals() {
     const { data, updateData } = useOnboarding();
     const navigate = useNavigate();
 
-    const [goal, setGoal] = useState(data.primary_goal ||"");
+    const [goal, setGoal] = useState(data.primary_goal || "");
     const [successVision, setSuccessVision] = useState(data.success_vision || "");
     const [successOther, setSuccessOther] = useState(data.success_vision_other || "");
-    const [bodyType, setBodyType] = useState(data.body_type || "");
+    const [templates, setTemplates] = useState([]);
+    const [buildTemplateId, setBuildTemplateId] = useState(data.build_template_id || null);
+
+    useEffect(() => {
+        getBuildTemplates()
+            .then((res) => setTemplates(res.data))
+            .catch(() => {});
+    }, []);
 
     const canContinue =
         goal &&
         successVision &&
-        (successVision !== "others" || successOther.trim().length > 0) &&
-        bodyType;
+        (successVision !== "other" || successOther.trim().length > 0) &&
+        buildTemplateId;
 
     function handleContinue() {
         updateData({
             primary_goal: goal,
             success_vision: successVision,
             success_vision_other: successVision === "other" ? successOther : "",
-            body_type: bodyType,
+            build_template_id: buildTemplateId,
         });
-
         navigate("/onboarding/step3");
     }
+
     return (
         <div className="bg-background text-text-primary min-h-screen flex flex-col">
             <header className="bg-background fixed top-0 w-full z-50 border-b border-border">
@@ -67,6 +68,7 @@ export default function Step2Goals() {
                     <div className="h-full bg-primary-container transition-all duration-500" style={{ width: "33%" }} />
                 </div>
             </header>
+
             <main className="flex-1 w-full max-w-3xl mx-auto px-5 md:px-10 pt-28 pb-32 flex flex-col gap-8">
                 <div className="flex flex-col gap-1 text-center">
                     <h1 className="text-3xl md:text-4xl text-text-primary">What's your goal?</h1>
@@ -82,18 +84,21 @@ export default function Step2Goals() {
                                 key={g.value}
                                 type="button"
                                 onClick={() => setGoal(g.value)}
-                                className={`flex items-center p-4 border rounded-2xl text-left transition-all ${goal === g.value
+                                className={`flex items-center p-4 border rounded-2xl text-left transition-all ${
+                                    goal === g.value
                                         ? "bg-surface-tint-teal border-primary-container"
                                         : "bg-surface border-border hover:bg-surface-variant"
-                                    }`}
+                                }`}
                             >
                                 <div
-                                    className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${goal === g.value ? "bg-surface-container-high" : "bg-surface-container"
-                                        }`}
+                                    className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${
+                                        goal === g.value ? "bg-surface-container-high" : "bg-surface-container"
+                                    }`}
                                 >
                                     <span
-                                        className={`material-symbols-outlined ${goal === g.value ? "text-primary-container" : "text-text-secondary"
-                                            }`}
+                                        className={`material-symbols-outlined ${
+                                            goal === g.value ? "text-primary-container" : "text-text-secondary"
+                                        }`}
                                     >
                                         {g.icon}
                                     </span>
@@ -113,10 +118,11 @@ export default function Step2Goals() {
                                 key={opt.value}
                                 type="button"
                                 onClick={() => setSuccessVision(opt.value)}
-                                className={`border rounded-full px-6 py-3 text-sm transition-all ${successVision === opt.value
+                                className={`border rounded-full px-6 py-3 text-sm transition-all ${
+                                    successVision === opt.value
                                         ? "bg-surface-tint-teal border-primary-container text-primary-container"
                                         : "border-border text-text-primary hover:bg-surface-variant"
-                                    }`}
+                                }`}
                             >
                                 {opt.label}
                             </button>
@@ -133,27 +139,37 @@ export default function Step2Goals() {
                     )}
                 </section>
 
-                {/* Body type */}
+                {/* Build selection (replaces simple body type) */}
                 <section className="flex flex-col gap-4">
-                    <h2 className="text-xl text-text-primary">Which body type is closest to yours?</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {BODY_TYPES.map((bt) => (
+                    <h2 className="text-xl text-text-primary">Which build is closest to yours?</h2>
+                    <p className="text-sm text-text-secondary">
+                        We use this to target your lagging muscles and set your calories.
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {templates.map((t) => (
                             <button
-                                key={bt.value}
+                                key={t.id}
                                 type="button"
-                                onClick={() => setBodyType(bt.value)}
-                                className={`flex flex-col items-center justify-center p-6 border rounded-2xl text-center transition-all gap-3 ${bodyType === bt.value
+                                onClick={() => setBuildTemplateId(t.id)}
+                                className={`p-3 rounded-2xl border text-left transition-all ${
+                                    buildTemplateId === t.id
                                         ? "bg-surface-tint-teal border-primary-container"
-                                        : "bg-surface border-border hover:bg-surface-variant"
-                                    }`}
+                                        : "bg-surface border-border hover:bg-surface-container-high"
+                                }`}
                             >
-                                <span
-                                    className={`material-symbols-outlined text-4xl ${bodyType === bt.value ? "text-primary-container" : "text-text-secondary"
-                                        }`}
-                                >
-                                    {bt.icon}
-                                </span>
-                                <span className="font-medium text-sm">{bt.label}</span>
+                                {t.image_url ? (
+                                    <img
+                                        src={t.image_url}
+                                        alt={t.name}
+                                        className="w-full h-24 object-cover rounded-lg mb-2"
+                                    />
+                                ) : (
+                                    <div className="w-full h-24 rounded-lg bg-surface-container-high flex items-center justify-center mb-2">
+                                        <span className="material-symbols-outlined text-3xl text-text-secondary">person</span>
+                                    </div>
+                                )}
+                                <div className="font-medium text-sm text-text-primary">{t.name}</div>
+                                <div className="text-xs text-text-secondary line-clamp-2">{t.description}</div>
                             </button>
                         ))}
                     </div>

@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from exercises.models import Exercise
+from django.contrib.postgres.fields import ArrayField
 
 
 class WorkoutPlan(models.Model):
@@ -8,6 +9,12 @@ class WorkoutPlan(models.Model):
         INITIAL = "initial", "Initial plan"
         AI_ADJUSTMENT = "ai_adjustment", "AI adjustment"
         USER_REQUESTED = "user_requested", "User requested"
+        
+    physique_profile = models.ForeignKey(
+        "onboarding.PhysiqueProfile", on_delete=models.SET_NULL,
+        null=True, blank=True, related_name="workouts_plans",
+        help_text="Snapshot of the physique profile that generated this plan"
+    )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="workout_plans")
     is_active = models.BooleanField(default=True)
@@ -24,6 +31,7 @@ class WorkoutDay(models.Model):
     day_number = models.PositiveSmallIntegerField()  # 1-7, position in weekly template
     label = models.CharField(max_length=100)          # e.g. "Upper Body Power", "Rest Day"
     is_rest_day = models.BooleanField(default=False)
+    focus_muscles = ArrayField(models.CharField(max_length=100), default=list, blank=True)
     estimated_duration_minutes = models.PositiveSmallIntegerField(null=True, blank=True)
 
     class Meta:
@@ -41,6 +49,8 @@ class WorkoutExercise(models.Model):
     sets = models.PositiveSmallIntegerField()
     reps = models.CharField(max_length=20)  # e.g. "12", "8-10", "AMRAP"
     rest_seconds = models.PositiveSmallIntegerField(null=True, blank=True)
+    is_priority = models.BooleanField(default=False, help_text="Tragets a lagging muscl from physique analysis")
+    reason = models.CharField(max_length=255, blank=True, help_text="Why this exercise was chosen")
 
     class Meta:
         ordering = ["order"]

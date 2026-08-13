@@ -18,6 +18,26 @@ class Exercise(models.Model):
     is_active = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
-
+    
+    class MovementPattern(models.TextChoices):
+        PUSH_HORIZONTAL = "push_horizontal", "Horizontal Push"
+        PUSH_VERTICAL = "push_vertical", "Vertical Push"
+        PULL_HORIZONTAL = "pull_horizontal", "Horizontal Pull"
+        PULL_VERTICAL = "pull_vertical", "Vertical Pull"
+        SQUAT = "squat", "Squat"
+        HINGE = "hinge", "Hip Hinge"
+        LUNGE = "lunge", "Lunge"
+        CORE = "core", "Core"
+        ISOLATION_UPPER = "isolation_upper", "Upper Isolation"
+        ISOLATION_LOWER = "isolation_lower", "Lower Isolation"
+        PLYOMETRIC = "plyometric", "Plyometric"
+        FULL_BODY = "full_body", "Full Body"
+        
+    difficulty_level = models.PositiveSmallIntegerField(
+        null=True, blank=True, help_text="1 (easiest) to 5 (hardest). AI-assigned + audited."
+    )
+    movement_pattern = models.CharField(
+        MovementPattern.choices, null=True, blank=True
+    )
     def __str__(self):
         return self.name

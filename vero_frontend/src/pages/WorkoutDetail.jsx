@@ -103,7 +103,7 @@ export default function WorkoutDetail() {
                 <div className="max-w-4xl w-full mx-auto p-5 md:p-10 flex-1 flex flex-col">
                     {/* Hero */}
                     <section className="mb-8 relative rounded-2xl overflow-hidden border border-border bg-surface">
-                        <div className="absolute inset-0 bg-gradient-to-br from-surface-tint-teal/30 to-background opacity-50" />
+                        <div className="absolute inset-0 bg-linear-to-br from-surface-tint-teal/30 to-background opacity-50" />
                         <div className="relative z-10 p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-end justify-between">
                             <div>
                                 <div className="flex items-center gap-2 mb-3">

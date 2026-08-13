@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { OnboardingProvider, useOnboarding } from "../../context/OnboardingContext";
-import { submitOnboarding } from "../../api/onboarding";
+import { useOnboarding } from "../../context/OnboardingContext";
+import { submitOnboarding, createPhysiqueFromTemplate } from "../../api/onboarding";
+import { generateMealPlan } from "../../api/nutrition";
 import { generatePlan } from "../../api/plans";
+
+const CUISINES = [
+    "pakistani", "indian", "bangladeshi", "sri lankan", "nepali", "afghan",
+    "chinese", "japanese", "korean", "thai", "vietnamese", "indonesian", "malaysian", "filipino",
+    "arabic", "lebanese", "turkish", "iranian", "egyptian",
+    "nigerian", "ghanaian", "ethiopian", "moroccan", "kenyan", "senegalese", "south african",
+    "mexican", "brazilian", "peruvian", "colombian", "argentine",
+    "italian", "french", "greek", "spanish", "british", "german",
+];
 
 const NUTRITION_OPTIONS = [
     {
@@ -20,48 +30,70 @@ const NUTRITION_OPTIONS = [
     {
         value: "convenience_food",
         title: "Mostly convenience food",
-        description: "I reply heavily on takeout. processed foods, or quick meals.",
+        description: "I rely heavily on takeout, processed foods, or quick meals.",
         icon: "takeout_dining",
     },
 ];
+
+const DIETARY_OPTIONS = ["none", "halal", "kosher", "vegetarian", "vegan"];
 
 export default function Step6Nutrition() {
     const { data, updateData } = useOnboarding();
     const navigate = useNavigate();
 
     const [eatingHabits, setEatingHabits] = useState(data.eating_habits || "");
+    const [dietaryRestriction, setDietaryRestriction] = useState(data.dietary_restriction || "none");
+    const [cuisinePreference, setCuisinePreference] = useState(data.cuisine_preference || "");
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
 
-    const canFinish = eatingHabits && !submitting;
+    const canFinish = eatingHabits && dietaryRestriction && !submitting;
 
     async function handleFinish() {
         setError("");
         setSubmitting(true);
 
-        const fullPayload = { ...data, eating_habits: eatingHabits };
-        updateData({ eating_habits: eatingHabits });
+        const merged = {
+            ...data,
+            eating_habits: eatingHabits,
+            dietary_restriction: dietaryRestriction,
+            cuisine_preference: cuisinePreference,
+        };
+        updateData({
+            eating_habits: eatingHabits,
+            dietary_restriction: dietaryRestriction,
+            cuisine_preference: cuisinePreference,
+        });
+
+        // build_template_id goes to the physique endpoint, not onboarding
+        const { build_template_id, ...onboardingPayload } = merged;
 
         try {
-            await submitOnboarding(fullPayload);
-            await generatePlan();
+            await submitOnboarding(onboardingPayload);                   // OnboardingProfile
+            await createPhysiqueFromTemplate(build_template_id, false);  // Physique only (no auto-plan)
+            await generatePlan();                                        // Workout plan (explicit)
+            await generateMealPlan();                                    // Meal plan
+            sessionStorage.removeItem("onboarding_biometrics");
             navigate("/dashboard");
         } catch (err) {
             const responseData = err.response?.data;
-            let message = "Something went wrong finishing setup. Please try again."
+            let message = "Something went wrong finishing setup. Please try again.";
             if (responseData) {
-                const firstKey = Object.keys(responseData)[0];
-                if (firstKey && Array.isArray(responseData)[firstKey]) {
-                    message = `${firstKey.replace(/_/g, "")}: $responseData[firstKey][0]`;
-                } else if (typeof responseData.error === "string") {
+                if (typeof responseData.error === "string") {
                     message = responseData.error;
+                } else {
+                    const firstKey = Object.keys(responseData)[0];
+                    if (firstKey && Array.isArray(responseData[firstKey])) {
+                        message = responseData[firstKey][0];
+                    }
                 }
             }
-            setError(message)
+            setError(message);
         } finally {
             setSubmitting(false);
         }
     }
+
     return (
         <div className="bg-background text-text-primary min-h-screen flex flex-col">
             <header className="bg-background fixed top-0 w-full z-50 border-b border-border">
@@ -87,43 +119,81 @@ export default function Step6Nutrition() {
                         Nutrition snapshot
                     </h1>
                     <p className="text-text-secondary">
-                        How would you describe your current eating habits? This is just a lightweight snapshot to help us
-                        tailor your coaching.
+                        Help us personalize your meals to your lifestyle and preferences.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                    {NUTRITION_OPTIONS.map((opt) => (
-                        <button
-                            key={opt.value}
-                            type="button"
-                            onClick={() => setEatingHabits(opt.value)}
-                            className={`bg-surface border rounded-xl p-5 flex items-center gap-4 transition-all text-left ${eatingHabits === opt.value
+                {/* Dietary restriction */}
+                <section className="mb-8">
+                    <h2 className="text-xl text-text-primary mb-3">Any dietary restrictions?</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        {DIETARY_OPTIONS.map((r) => (
+                            <button
+                                key={r}
+                                type="button"
+                                onClick={() => setDietaryRestriction(r)}
+                                className={`p-3 rounded-xl border text-sm capitalize transition-all ${dietaryRestriction === r
+                                    ? "bg-surface-tint-teal border-primary-container text-primary-container"
+                                    : "bg-surface border-border text-text-primary hover:bg-surface-container-high"
+                                    }`}
+                            >
+                                {r}
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Cuisine preference */}
+                <section className="mb-8">
+                    <h2 className="text-xl text-text-primary mb-3">Preferred cuisine (optional)</h2>
+                    <select
+                        className="w-full bg-surface border border-border rounded-[10px] py-3 px-4 text-text-primary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        value={cuisinePreference}
+                        onChange={(e) => setCuisinePreference(e.target.value)}
+                    >
+                        <option value="">No preference</option>
+                        {CUISINES.map((c) => (
+                            <option key={c} value={c} className="capitalize">{c}</option>
+                        ))}
+                    </select>
+                </section>
+
+                {/* Eating habits */}
+                <section>
+                    <h2 className="text-xl text-text-primary mb-3">How would you describe your eating habits?</h2>
+                    <div className="flex flex-col gap-4">
+                        {NUTRITION_OPTIONS.map((opt) => (
+                            <button
+                                key={opt.value}
+                                type="button"
+                                onClick={() => setEatingHabits(opt.value)}
+                                className={`bg-surface border rounded-xl p-5 flex items-center gap-4 transition-all text-left ${eatingHabits === opt.value
                                     ? "bg-surface-tint-teal border-primary-container"
                                     : "border-border hover:bg-surface-container-high"
-                                }`}
-                        >
-                            <div
-                                className={`shrink-0 mt-0.5 ${eatingHabits === opt.value ? "text-primary-container" : "text-text-secondary"
                                     }`}
                             >
-                                <span className="material-symbols-outlined">{opt.icon}</span>
-                            </div>
-                            <div className="grow">
-                                <h3 className="text-lg text-text-primary mb-1">{opt.title}</h3>
-                                <p className="text-sm text-text-secondary">{opt.description}</p>
-                            </div>
-                            <div
-                                className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${eatingHabits === opt.value ? "border-primary-container" : "border-text-secondary"
-                                    }`}
-                            >
-                                {eatingHabits === opt.value && (
-                                    <div className="w-2.5 h-2.5 rounded-full bg-primary-container" />
-                                )}
-                            </div>
-                        </button>
-                    ))}
-                </div>
+                                <div
+                                    className={`shrink-0 mt-0.5 ${eatingHabits === opt.value ? "text-primary-container" : "text-text-secondary"
+                                        }`}
+                                >
+                                    <span className="material-symbols-outlined">{opt.icon}</span>
+                                </div>
+                                <div className="grow">
+                                    <h3 className="text-lg text-text-primary mb-1">{opt.title}</h3>
+                                    <p className="text-sm text-text-secondary">{opt.description}</p>
+                                </div>
+                                <div
+                                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${eatingHabits === opt.value ? "border-primary-container" : "border-text-secondary"
+                                        }`}
+                                >
+                                    {eatingHabits === opt.value && (
+                                        <div className="w-2.5 h-2.5 rounded-full bg-primary-container" />
+                                    )}
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+                </section>
 
                 {error && <p className="text-red-400 text-sm mt-4">{error}</p>}
             </main>

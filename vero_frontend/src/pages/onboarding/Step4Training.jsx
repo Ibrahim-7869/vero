@@ -42,16 +42,20 @@ export default function Step4Training() {
 
     const [trainingStyle, setTrainingStyle] = useState(data.training_style || "");
     const [workoutFocus, setWorkoutFocus] = useState(data.workout_focus || "");
+    const [experienceLevel, setExperienceLevel] = useState(data.experience_level || "");
 
-    const canContinue = trainingStyle && workoutFocus;
+
+    const canContinue = trainingStyle && workoutFocus && experienceLevel;
 
     function handleContinue() {
         updateData({
             training_style: trainingStyle,
             workout_focus: workoutFocus,
+            experience_level: experienceLevel,
         });
         navigate("/onboarding/step5");
     }
+    
     return (
         <div className="bg-background text-text-primary min-h-screen flex flex-col">
             <header className="bg-background fixed top-0 w-full z-50 border-b border-border">
@@ -70,8 +74,27 @@ export default function Step4Training() {
                     <div className="h-full bg-primary-container transition-all duration-500" style={{ width: "67%" }} />
                 </div>
             </header>
-
             <main className="flex-1 w-full max-w-3xl mx-auto px-5 md:px-10 pt-28 pb-32 flex flex-col gap-8">
+                {/* Experience level */}
+                <section className="flex flex-col gap-4">
+                    <h2 className="text-2xl text-text-primary">Your experience level</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {["novice", "beginner", "intermediate", "advanced"].map((level) => (
+                            <button
+                                key={level}
+                                type="button"
+                                onClick={() => setExperienceLevel(level)}
+                                className={`p-4 rounded-xl border text-center transition-all capitalize ${experienceLevel === level
+                                    ? "bg-surface-tint-teal border-primary-container"
+                                    : "bg-surface border-border hover:bg-surface-container-high"
+                                    }`}
+                            >
+                                {level}
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
                 {/* Training style */}
                 <section className="flex flex-col gap-4">
                     <h2 className="text-2xl text-text-primary">Training style</h2>
@@ -82,8 +105,8 @@ export default function Step4Training() {
                                 type="button"
                                 onClick={() => setTrainingStyle(opt.value)}
                                 className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all ${trainingStyle === opt.value
-                                        ? "bg-surface-tint-teal border-primary-container"
-                                        : "bg-surface border-border hover:bg-surface-container-high"
+                                    ? "bg-surface-tint-teal border-primary-container"
+                                    : "bg-surface border-border hover:bg-surface-container-high"
                                     }`}
                             >
                                 <div className="flex-1">
@@ -98,6 +121,8 @@ export default function Step4Training() {
                     </div>
                 </section>
 
+
+
                 {/* Focus area */}
                 <section className="flex flex-col gap-4">
                     <h2 className="text-2xl text-text-primary">What do you want to focus on?</h2>
@@ -108,8 +133,8 @@ export default function Step4Training() {
                                 type="button"
                                 onClick={() => setWorkoutFocus(opt.value)}
                                 className={`flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${workoutFocus === opt.value
-                                        ? "bg-surface-tint-teal border-primary-container"
-                                        : "bg-surface border-border hover:bg-surface-container-high"
+                                    ? "bg-surface-tint-teal border-primary-container"
+                                    : "bg-surface border-border hover:bg-surface-container-high"
                                     }`}
                             >
                                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest text-text-primary shrink-0">
