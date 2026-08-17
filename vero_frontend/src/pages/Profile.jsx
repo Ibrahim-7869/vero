@@ -6,6 +6,7 @@ import { getOnboardingProfile } from "../api/onboarding";
 import { getActivePlan } from "../api/plans";
 import { getHistory, startSession } from "../api/logs";
 import Sidebar from "../components/Sidebar";
+import InjuryPanel from "./InjuryPanel";
 
 const GOAL_LABELS = {
     lose_weight: "Lose weight",
@@ -59,7 +60,8 @@ export default function Profile() {
                     getHistory()
                 ]);
                 
-                setOnboardingData(profile);
+                setOnboardingData(profile.data);
+                console.log("API response:", profile);
                 setPlan(planData);
 
                 // Check if today's workout is done
@@ -227,6 +229,8 @@ export default function Profile() {
                                     <p className="text-sm text-text-secondary">No onboarding data found.</p>
                                 )}
                             </div>
+
+                            <InjuryPanel />
 
                             {/* Account */}
                             <div className="bg-surface border border-border rounded-xl p-5">

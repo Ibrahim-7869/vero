@@ -6,35 +6,35 @@ class OnboardingProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = OnboardingProfile
         fields = [
-            "id",
-            "has_injuries",
-            "injury_details",
-            "takes_medication",
-            "medication_details",
-            "has_doctor_restriction",
-            "doctor_restriction_details",
-            "primary_goal",
-            "success_vision",
-            "success_vision_other",
-            "equipment",
-            "time_per_session",
-            "days_per_week",
-            "training_style",
-            "workout_focus",
-            "sleep_hours",
-            "stress_level",
-            "smokes_or_drinks",
-            "eating_habits"
-            "age",
-            "gender",
-            "weight_kg",
-            "height_cm",
-            "experience_level",
-            "dietary_restrictions",
-            "cuisine_preferance",
-            "ai_exclusions",
-            "completed_at",
-        ]
+                "id",
+                "has_injuries",
+                "injury_details",
+                "takes_medication",
+                "medication_details",
+                "has_doctor_restriction",
+                "doctor_restriction_details",
+                "primary_goal",
+                "success_vision",
+                "success_vision_other",
+                "equipment",
+                "time_per_session",
+                "days_per_week",
+                "training_style",
+                "workout_focus",
+                "experience_level",
+                "sleep_hours",
+                "stress_level",
+                "smokes_or_drinks",
+                "eating_habits",
+                "dietary_restriction",
+                "cuisine_preference",
+                "age",
+                "gender",
+                "weight_kg",
+                "height_cm",
+                "ai_exclusions",
+                "completed_at",
+            ]
         read_only_fields = ["id", "completed_at"]
 
     def validate(self, data):
@@ -81,3 +81,5 @@ class CreatePhysiqueFromTemplateSerializer(serializers.Serializer):
         if not BuildTemplate.objects.filter(id=value, is_active=True).exists():
             raise serializers.ValidationError("Build template not found or inactive.")
         return value
+    
+        

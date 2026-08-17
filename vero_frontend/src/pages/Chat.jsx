@@ -218,7 +218,7 @@ export default function Chat() {
                                     className={`flex gap-3 max-w-3xl ${isUser ? "self-end flex-row-reverse" : "self-start"}`}
                                 >
                                     {/* Avatar */}
-                                    <div className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center border border-border bg-surface">
+                                    <div className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center border border-border bg-surface">
                                         <span className="material-symbols-outlined text-lg text-primary-container">
                                             {isUser ? "person" : "smart_toy"}
                                         </span>
@@ -260,7 +260,7 @@ export default function Chat() {
                     {/* AI typing indicator */}
                     {sending && (
                         <div className="flex gap-3 max-w-3xl self-start">
-                            <div className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center border border-border bg-surface">
+                            <div className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center border border-border bg-surface">
                                 <span className="material-symbols-outlined text-lg text-primary-container">smart_toy</span>
                             </div>
                             <div className="bg-surface border border-border rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-1">

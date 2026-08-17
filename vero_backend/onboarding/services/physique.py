@@ -1,12 +1,3 @@
-"""
-Physique analysis service — Gemini Vision LLM (semantic half).
-
-Every AI-output field is constrained to a fixed vocabulary (Literal types)
-via structured output, so the model CANNOT hallucinate values.
-
-IMPORTANT: MuscleGroup values MUST match Exercise.target_muscles exactly,
-or the workout generator won't find matching exercises.
-"""
 from typing import List, Literal
 
 import requests
@@ -15,10 +6,9 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-GEMINI_MODEL = "gemini-2.5-flash"  # swap to "gemini-2.0-flash" if needed
+GEMINI_MODEL = "gemini-2.5-flash"
 
 
-# ─── Bounded vocabularies (anti-hallucination) ────────────────────────
 
 Somatotype = Literal[
     "ectomorph", "mesomorph", "endomorph",
@@ -30,7 +20,6 @@ BodyFatRange = Literal[
     "25-30%", "30-35%", "over 35%",
 ]
 
-# ⬇️ EDIT THIS to match YOUR Exercise.target_muscles values exactly ⬇️
 MuscleGroup = Literal[
     "pectorals", "lats", "trapezius", "deltoids",
     "biceps", "triceps", "forearms",
@@ -68,9 +57,6 @@ Rules:
 - Do NOT identify the person.
 """
 
-
-# ─── Core: analyze an image (bytes) ──────────────────────────────────
-
 def analyze_physique_image(
     image_bytes: bytes,
     mime_type: str = "image/jpeg",
@@ -99,7 +85,6 @@ def analyze_physique_image(
     return response.parsed
 
 
-# ─── Convenience: analyze from a URL (internet image feature) ────────
 
 def analyze_physique_from_url(image_url: str, gender: str = None) -> PhysiqueAnalysis:
     resp = requests.get(image_url, timeout=15)
@@ -107,8 +92,6 @@ def analyze_physique_from_url(image_url: str, gender: str = None) -> PhysiqueAna
     mime = resp.headers.get("Content-Type", "image/jpeg").split(";")[0]
     return analyze_physique_image(resp.content, mime_type=mime, gender=gender)
 
-
-# ─── BuildTemplate path (no AI call needed) ──────────────────────────
 
 def physique_from_template(template) -> PhysiqueAnalysis:
     """Copy a predefined build's data into the standard analysis shape."""

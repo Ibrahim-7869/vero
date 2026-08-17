@@ -4,12 +4,12 @@ from django.db import transaction
 
 from onboarding.models import OnboardingProfile
 from exercises.models import Exercise
+from health.models import Injury, InjuryTypeTemplate
 from .models import WorkoutPlan, WorkoutDay, WorkoutExercise
 from .safety import get_safety_exclusions
 from .progression import analyze_user_progression
 
 
-# ─── Equipment mapping (unchanged) ───────────────────────────────────
 EQUIPMENT_MAP = {
     "no_equipment": "body weight",
     "dumbbells": "dumbbell",
@@ -17,7 +17,6 @@ EQUIPMENT_MAP = {
     "kettlebells": "kettlebell",
 }
 
-# ─── Goal prescriptions (unchanged) ─────────────────────────────────
 GOAL_PRESCRIPTION = {
     "lose_weight": {"sets": 3, "reps": "12-15", "rest_seconds": 30},
     "build_muscle": {"sets": 4, "reps": "8-12", "rest_seconds": 75},
@@ -25,23 +24,43 @@ GOAL_PRESCRIPTION = {
     "tone": {"sets": 3, "reps": "12-15", "rest_seconds": 30},
 }
 
-# ─── Experience-level adjustments ────────────────────────────────────
 EXPERIENCE_SET_ADJ = {"novice": -1, "beginner": 0, "intermediate": 0, "advanced": 1}
 EXPERIENCE_REST_ADJ = {"novice": 10, "beginner": 0, "intermediate": 0, "advanced": -10}
 EXPERIENCE_MAX_DIFF = {"novice": 2, "beginner": 3, "intermediate": 4, "advanced": 5}
 
+# Mobility drills are routed to a warm-up slot, never into main working sets
+MOBILITY_KEYWORDS = ["stretch", "pose", "yoga", "mobility", "roller", "circle", "warm-up", "warm up"]
 
-# ─── Dynamic schedule generation (replaces SCHEDULE_TEMPLATES) ───────
+
+def _is_mobility(ex):
+    n = (ex.name or "").lower()
+    return any(k in n for k in MOBILITY_KEYWORDS)
+
+
+def _get_keyword_exclusions(user):
+    """Name/movement-pattern keywords to ban: chat swaps (ai_exclusions) + active injuries."""
+    try:
+        profile = user.onboarding_profile
+        keywords = set(k.lower() for k in getattr(profile, "ai_exclusions", []))
+    except Exception:
+        keywords = set()
+    for inj in user.injuries.filter(is_active=True):
+        tpl = InjuryTypeTemplate.objects.filter(body_part=inj.body_part).first()
+        if tpl:
+            keywords.update(t.lower() for t in tpl.avoid_exercises_tagged)
+    return keywords
+
+
+def _is_keyword_excluded(ex, keywords):
+    if not keywords:
+        return False
+    pattern = (ex.movement_pattern or "").lower()
+    name = (ex.name or "").lower()
+    return pattern in keywords or any(k in name for k in keywords)
+
+
 def generate_weekly_template(days_per_week, workout_focus="strength"):
     """Generate a 7-day template dynamically based on training frequency."""
-    if workout_focus == "cardio":
-        # Cardio-focused: lighter strength work
-        focus_sets = 2
-        focus_reps = "15-20"
-    else:
-        focus_sets = None  # will use goal prescription
-        focus_reps = None
-
     if days_per_week <= 2:
         return [
             (1, "Full Body A", ["pectorals", "lats", "delts", "quads", "glutes", "abs"]),
@@ -105,21 +124,25 @@ def _get_user_equipment_values(profile):
 
 def _select_exercises_for_day(
     focus_muscles, lagging_muscles, user_equipment, all_exclusions,
-    used_exercise_ids, experience_level, target_total=5
+    used_exercise_ids, experience_level, keyword_exclusions=None, target_total=5
 ):
     """
     Select exercises for one day, prioritizing lagging muscles.
-    
+
     Strategy:
     1. Filter by focus_muscles (must hit at least one)
     2. Filter by equipment
-    3. Filter out exclusions
-    4. Prioritize exercises that hit lagging_muscles
-    5. Use difficulty_level if populated (future-proof)
+    3. Filter out keyword exclusions (AI swaps + injuries) by name/movement pattern
+    4. Filter out muscle/body-part exclusions (safety/doctor)
+    5. Cap difficulty by experience (never excludes easy exercises)
+    6. Route mobility drills out of mains (returned separately for warm-ups)
+    7. Prioritize exercises that hit lagging_muscles
+
+    Returns (selected_mains, mobility_pool).
     """
     candidates = Exercise.objects.filter(
         is_active=True,
-        target_muscles__overlap=focus_muscles,  # must hit at least one focus muscle
+        target_muscles__overlap=focus_muscles,
     ).exclude(id__in=used_exercise_ids)
 
     # Filter by equipment
@@ -128,7 +151,14 @@ def _select_exercises_for_day(
         if set(ex.equipments).issubset(user_equipment)
     ]
 
-    # Filter out exclusions (safety + AI + injury-based)
+    # Filter out keyword exclusions (movement pattern / name: "squat", "jump", ...)
+    if keyword_exclusions:
+        valid_candidates = [
+            ex for ex in valid_candidates
+            if not _is_keyword_excluded(ex, keyword_exclusions)
+        ]
+
+    # Filter out muscle/body-part exclusions (safety + doctor restrictions)
     if all_exclusions:
         valid_candidates = [
             ex for ex in valid_candidates
@@ -138,13 +168,17 @@ def _select_exercises_for_day(
             )
         ]
 
-    # Use difficulty_level if populated (future-proof)
+    # Difficulty = experience matching (beginners KEEP level 1-2 strength work)
     max_diff = EXPERIENCE_MAX_DIFF.get(experience_level, 3)
     if any(ex.difficulty_level is not None for ex in valid_candidates):
         valid_candidates = [
             ex for ex in valid_candidates
             if ex.difficulty_level is None or ex.difficulty_level <= max_diff
         ]
+
+    # Route mobility drills to the warm-up pool, never into mains
+    mobility_pool = [ex for ex in valid_candidates if _is_mobility(ex)]
+    valid_candidates = [ex for ex in valid_candidates if not _is_mobility(ex)]
 
     # Partition into priority (hits lagging) and others
     lagging_set = set(lagging_muscles)
@@ -166,7 +200,7 @@ def _select_exercises_for_day(
                 selected.append(ex)
 
     used_exercise_ids.update(ex.id for ex in selected)
-    return selected
+    return selected, mobility_pool
 
 
 def _adjust_prescription(base_prescription, modifier, experience_level):
@@ -196,23 +230,28 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0,
 
     if physique is None:
         physique = user.physique_profiles.filter(is_current=True).first()
-    
+
     lagging_muscles = list(physique.lagging_muscles) if physique else []
     experience_level = getattr(profile, "experience_level", "beginner")
 
+    # Muscle/body-part based exclusions (safety + doctor + progression)
     safety_exclusions = get_safety_exclusions(profile)
-
     if extra_exclusions:
         safety_exclusions.extend(extra_exclusions)
+    all_exclusions = list(set(safety_exclusions))
 
-    ai_exclusions = getattr(profile, "ai_exclusions", [])
-
-    all_exclusions = list(set(safety_exclusions + ai_exclusions))
+    # Name/movement-pattern based exclusions (AI chat swaps + active injuries)
+    keyword_exclusions = _get_keyword_exclusions(user)
 
     user_equipment = _get_user_equipment_values(profile)
     template = generate_weekly_template(profile.days_per_week, profile.workout_focus)
     base_prescription = GOAL_PRESCRIPTION.get(profile.primary_goal, GOAL_PRESCRIPTION["general_fitness"])
     prescription = _adjust_prescription(base_prescription, intensity_modifier, experience_level)
+
+    # Cardio focus gets higher-rep, lower-set prescription
+    if getattr(profile, "workout_focus", "strength") == "cardio":
+        prescription["sets"] = 2
+        prescription["reps"] = "15-20"
 
     # Deactivate previous plans
     WorkoutPlan.objects.filter(user=user, is_active=True).update(is_active=False)
@@ -241,12 +280,33 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0,
         if is_rest:
             continue
 
-        exercises = _select_exercises_for_day(
+        exercises, mobility_pool = _select_exercises_for_day(
             focus_muscles, lagging_muscles, user_equipment, all_exclusions,
-            used_exercise_ids, experience_level, target_total=5
+            used_exercise_ids, experience_level,
+            keyword_exclusions=keyword_exclusions, target_total=5
         )
 
-        for order, exercise in enumerate(exercises, start=1):
+        order = 1
+
+        # Warm-up slot: 1-2 mobility drills targeting today's muscles
+        warmups = [m for m in mobility_pool if set(m.target_muscles) & set(focus_muscles)][:2] \
+            or mobility_pool[:1]
+        for m in warmups:
+            WorkoutExercise.objects.create(
+                workout_day=workout_day,
+                exercise=m,
+                order=order,
+                sets=1,
+                reps="1",
+                rest_seconds=30,
+                is_priority=False,
+                reason="Warm-up: hold 30-45s per side",
+            )
+            used_exercise_ids.add(m.id)
+            order += 1
+
+        # Main working sets
+        for exercise in exercises:
             is_priority = bool(set(exercise.target_muscles) & set(lagging_muscles))
             WorkoutExercise.objects.create(
                 workout_day=workout_day,
@@ -259,6 +319,7 @@ def generate_workout_plan(user, reason="initial", intensity_modifier=0,
                 reason=f"Targets lagging {', '.join(set(exercise.target_muscles) & set(lagging_muscles))}"
                 if is_priority else "",
             )
+            order += 1
 
     return plan
 
@@ -292,7 +353,7 @@ def regenerate_plan_with_progression(user, reason="ai_adjustment"):
         user, reason=reason, intensity_modifier=0, adjustment_note=analysis["reason"],
     )
 
-    
+
 def replace_exercise_in_active_plan(user, keyword):
     """Replace exercises matching a keyword with valid alternatives."""
     plan = WorkoutPlan.objects.filter(user=user, is_active=True).first()
@@ -303,14 +364,15 @@ def replace_exercise_in_active_plan(user, keyword):
         profile = user.onboarding_profile
         user_equipment = _get_user_equipment_values(profile)
         safety_exclusions = get_safety_exclusions(profile)
-        ai_exclusions = getattr(profile, "ai_exclusions", [])
-        all_exclusions = list(set(safety_exclusions + ai_exclusions))
+        all_exclusions = list(set(safety_exclusions))
     except Exception:
         user_equipment = set()
         all_exclusions = []
 
+    keyword_exclusions = _get_keyword_exclusions(user)
+
     workout_exercises = WorkoutExercise.objects.filter(
-        workout_day__plan=plan, 
+        workout_day__plan=plan,
         exercise__name__icontains=keyword
     )
 
@@ -322,7 +384,7 @@ def replace_exercise_in_active_plan(user, keyword):
 
         if not original_ex.body_parts:
             continue
-            
+
         candidates = Exercise.objects.filter(
             is_active=True,
             body_parts__overlap=original_ex.body_parts,
@@ -334,7 +396,14 @@ def replace_exercise_in_active_plan(user, keyword):
             if set(ex.equipments).issubset(user_equipment)
         ]
 
-        # Filter out safety/AI exclusions
+        # Filter out keyword exclusions (injuries + AI swaps) by name/pattern
+        if keyword_exclusions:
+            valid_candidates = [
+                ex for ex in valid_candidates
+                if not _is_keyword_excluded(ex, keyword_exclusions)
+            ]
+
+        # Filter out safety/AI muscle-based exclusions
         if all_exclusions:
             valid_candidates = [
                 ex for ex in valid_candidates
@@ -348,7 +417,7 @@ def replace_exercise_in_active_plan(user, keyword):
             new_ex = random.choice(valid_candidates)
             we.exercise = new_ex
             we.save()
-            
+
             current_exercise_ids.add(new_ex.id)
             replaced_count += 1
 
